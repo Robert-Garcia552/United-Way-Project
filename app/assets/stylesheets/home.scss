@@ -2,10 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.give-button {
+  position: relative;
+  float: right;
+}
+
 h1 {
   text-align: center;
 }
 
 .container-events {
+  text-align: center;
+}
+
+footer {
+  margin-top: 10px;
   text-align: center;
 }
