@@ -1,7 +1,39 @@
-<div>
-<%= form_for @user do |registration_form| %>
-    <%= registration_form.text_field :first_name %>
-    <%= registration_form.text_field :last_name %>
-    
+<%= form_with(model: @user, local: true) do |form| %>
+    <div class="row">
+      
+     <div class="form-group col-md-8">
+        <%= form.label :first_Name %>
+        <%= form.text_field :description, class: "form-control" %>
+      </div>
 
-</div>
+      <div class="form-group col-md-8">
+        <%= form.label :Last_Name %>
+        <%= form.text_field :description, class: "form-control" %>
+      </div>
+  
+      <div class="form-group col-md-4">
+        <%= form.label :Date_of_birth %>
+        <%= form.date_field :due_date, class: "form-control" %>
+      </div>
+
+      <div class="form-group col-md-8">
+        <%= form.label :email %>
+        <%= form.text_field :description, class: "form-control" %>
+      </div>
+
+      <div class="form-group col-md-8">
+        <%= form.label :address %>
+        <%= form.text_field :description, class: "form-control" %>
+      </div>
+  
+      <div class="form-group col-md-8">
+        <%= form.label :telephone %>
+        <%= form.text_field :description, class: "form-control" %>
+      </div>
+
+    </div>
+  
+    <div class="actions">
+      <%= form.submit nil, class: "btn btn-primary" %>
+    </div>
+  <% end %>
