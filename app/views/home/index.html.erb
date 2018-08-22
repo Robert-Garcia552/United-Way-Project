@@ -12,6 +12,8 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="./stylesheet/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
   </head>
 
   <body>
@@ -20,9 +22,7 @@
     <nav class="navbar navbar-expand-lg" style="background-color: #00008B;" role="navigation">
         <div class="container">
             <a class="navbar-brand" href="#">LOGO</a>
-            <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                &#9776;
-            </button>
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar"></button>
             <div class="collapse navbar-collapse" id="exCollapsingNavbar">
                 <ul class="nav navbar-nav">
                     <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
@@ -33,7 +33,6 @@
                 </ul>
                 <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
                                   <span class="give-button"><button type="button" class="btn btn-danger">GIVE</button></span>
-                    <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
                     <li class="dropdown order-1">
                         <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Login <span class="caret"></span></button>
                         <ul class="dropdown-menu dropdown-menu-right mt-2">
@@ -112,7 +111,7 @@
 
             <!-- Who We Are -->
             <div class="container">
-              <h1 class="mt-5">United Way</h1>
+              <h1 class="mt-5">United Way of Miami-Dade</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
 
@@ -130,15 +129,6 @@
                 </div>
                 <div class="col-sm">
                   <%= image_tag "home/community.jpg", class: ["d-block", "w-100"]%>
-                  <img class="d-block w-100" src="../assets/images/home/community.jpg" alt="Kids">
-                  <b>Event 1</b>
-                </div>
-                <div class="col-sm">
-                  <img class="d-block w-100" src="app/assets/images/home/community.jpg" alt="Kids">
-                  <b>Event 2</b>
-                </div>
-                <div class="col-sm">
-                  <img class="d-block w-100" src="app/assets/images/home/community.jpg" alt="Kids">
                   <b>Event 3</b>
                 </div>
               </div>
@@ -150,8 +140,42 @@
     <script src="./scripts.js"></script>
   </body>
 
-  <footer>
-    Copyright
+  <!-- Footer -->
+  <footer class="page-footer font-small special-color-dark pt-4">
+    <div class="container">
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fa fa-facebook"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fa fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fa fa-google-plus"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-li mx-1">
+            <i class="fa fa-linkedin"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-dribbble mx-1">
+            <i class="fa fa-dribbble"> </i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-copyright text-center py-3">©2018 UnitedWayMiami.org</a>
+    </div>
+
   </footer>
+
 
 </html>
