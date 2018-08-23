@@ -4,10 +4,16 @@ class UserController < ApplicationController
   end
 
   def create
-    @user = User.create
+    @user = User.new(params[:user])
+    if @user.save
+      redirect_to user_create_path, notice: 'Profile was successfully created.'
+    else
+      redirect_to user_create_path, notice: "Sorry, could not create profile because #{@user.errors.full_messages.join(', ').downcase}."
+    end
   end
 
-  # private
-  #   params.require(first_name, last_name)
+  def show
+  end
+
 
 end

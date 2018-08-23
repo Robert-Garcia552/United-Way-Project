@@ -1,34 +1,34 @@
-<%= form_with(model: @user, local: true) do |form| %>
+<%= form_for @user, url: {action: "create"} do |form| %>
     <div class="row">
       
      <div class="form-group col-md-8">
-        <%= form.label :first_Name %>
-        <%= form.text_field :description, class: "form-control" %>
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name, class: "form-control" %>
       </div>
 
       <div class="form-group col-md-8">
-        <%= form.label :Last_Name %>
-        <%= form.text_field :description, class: "form-control" %>
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name, class: "form-control" %>
       </div>
   
       <div class="form-group col-md-4">
-        <%= form.label :Date_of_birth %>
-        <%= form.date_field :due_date, class: "form-control" %>
+        <%= form.label :date_of_birth %>
+        <%= form.date_field :date_of_birth, class: "form-control" %>
       </div>
 
       <div class="form-group col-md-8">
         <%= form.label :email %>
-        <%= form.text_field :description, class: "form-control" %>
+        <%= form.text_field :email, class: "form-control" %>
       </div>
 
       <div class="form-group col-md-8">
         <%= form.label :address %>
-        <%= form.text_field :description, class: "form-control" %>
+        <%= form.text_field :address, class: "form-control" %>
       </div>
   
       <div class="form-group col-md-8">
         <%= form.label :telephone %>
-        <%= form.text_field :description, class: "form-control" %>
+        <%= form.text_field :telephone, class: "form-control" %>
       </div>
 
     </div>
