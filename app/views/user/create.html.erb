@@ -1,13 +1,21 @@
-<%= form_with(model: @user, local: true) do |form| %>
+<%= form_for @user, url: {action: "create"} do |form| %>
     <div class="row">
       
      <div class="form-group col-md-8">
+<<<<<<< HEAD
         <%= form.label :first_Name %>
+=======
+        <%= form.label :first_name %>
+>>>>>>> 67d3ac0665ffcbb32ae72f8d588a5115ea43c1f9
         <%= form.text_field :first_name, class: "form-control" %>
       </div>
 
       <div class="form-group col-md-8">
+<<<<<<< HEAD
         <%= form.label :last_Name %>
+=======
+        <%= form.label :last_name %>
+>>>>>>> 67d3ac0665ffcbb32ae72f8d588a5115ea43c1f9
         <%= form.text_field :last_name, class: "form-control" %>
       </div>
   
