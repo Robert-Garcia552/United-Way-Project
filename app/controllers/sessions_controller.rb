@@ -4,14 +4,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.
-              find_by(email: params[:email]).
-              try(:authenticate, params[:encrypted_password])
+  
+  end
 
-    return render action: 'new' unless @user
+  def show
+    @user = current_user
+  end
 
-    session[:user_id] = @user.id
-    redirect_to user_profile_path
+  def update
   end
 
 end
