@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :events, only: [:index, :create, :destroy]
+
   root 'home#index'
 
-  get 'home/index' => 'home#index'
-  get 'user' => 'user#index'
-  get 'user/create' => 'user#create' 
-  post 'user/create' => 'user#create' 
+  get '/events' => 'events#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
