@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   layout :by_resource
+  before_action :authenticate_user!
  
   private
  
