@@ -49,7 +49,7 @@ DATA = {
     },
     {
       name: "Event 3",
-      details [
+      details: [
                 {
                   title: "2018 International Coastal Cleanup",
                   description: "Thanks to volunteers around the world, the International Coastal Cleanup has become a beacon of hope, leading and inspiring action in support of our ocean. Over the years, this movement has created a family that spans oceans and country borders. Join United Way of Miami-Dade and other members of our community as we help improve our local environment.",
@@ -107,7 +107,7 @@ DATA = {
     },
     {
       name: "Event 6",
-      details [
+      details: [
                 {
                   title: "2018 Read for the Record",
                   description: "Book lovers, join us to read Maybe Something Beautiful by F. Isabel Campoy and Theresa Howell and help set a new world record for the largest and most rewarding shared reading experience, ever! Each volunteer will be paired with children at Centro Mater East, a United Way-funded agency, and discover what good can a splash of color do in a community of gray.
@@ -145,7 +145,7 @@ DATA = {
     },
     {
       name: "Event 8",
-      details [
+      details: [
                 {
                   title: "Making a difference this Thanksgiving",
                   description: "Thanksgiving is a time for sharing … so join us for a festive evening as we kick off this holiday season. We will be assembling food boxes with donated details to distribute to the 600 low-income families throughout early care and education programs so they can prepare their Thanksgiving dinner.",
@@ -329,7 +329,7 @@ DATA = {
                 {
                   title: "Lotus Village Volunteer Opportunities",
                   description: "They have a new state-of-the-art facility and they are looking for volunteers that can come with activities or ideas. Lotus Village relies on volunteers to create and lead activities for the women, children, and together (including mommy & me)! If you have knowledge or passion about art, meditation, Zumba, knitting, make-up, manicures, (to name a few), Lotus Village is especially (but not only) looking for volunteers to commit 1+ hours a week.",
-                  date: ,
+                  date: "" ,
                   start_at: "",
                   end_at: "",
                   location: "",
@@ -347,7 +347,7 @@ DATA = {
                 {
                   title: "Red Cross",
                   description: "The Red Cross is looking for volunteers to cover their reception desk and answer phones. If you have any questions, please call Sylvia J. Taylor at (954) 895-8935.",
-                  date: ,
+                  date: "",
                   start_at: "",
                   end_at: "",
                   location: "",
@@ -365,7 +365,7 @@ DATA = {
                 {
                   title: "Southwest Social Services Badia Senior Center",
                   description: "Southwest Social Services Programs, Inc. has been serving senior citizens throughout Miami-Dade County since 1981. The services they offer include home-delivered meals, congregate meals in senior centers, screening and assessment, nutrition education, recreational activities, education, and transportation. Southwest Social services is looking for volunteers throughout the week to help with arts & crafts, English classes, recreational activities and computer classes for seniors.",
-                  date: ,
+                  date: "" ,
                   start_at: "",
                   end_at: "",
                   location: "Badia Senior Center (Main)",
@@ -377,23 +377,9 @@ DATA = {
 
               ]
     },
-    {
-      name: "Event 20",
-      details: [
-                {
-                  title: "",
-                  description: "",
-                  date: ,
-                  start_at: "",
-                  end_at: "",
-                  location: "",
-                  street_address: "",
-                  city: "",
-                  state: "",
-                  zip: ""
-                },
-
-              ]
-    }
   ]
 }
+
+DATA[:calendarEvents].each do |event|
+  p Event.create!(event[:details][0])
+end
