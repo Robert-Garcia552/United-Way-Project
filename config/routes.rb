@@ -12,5 +12,8 @@ Rails.application.routes.draw do
   get '/user_profile' => 'userprofiles#update'
   get '/user_profile' => 'userprofiles#show'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # sign up and create users routes
+  get '/sign-up' => 'users#new'
+  get '/users' => 'users#create'
+
 end
