@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 
   get '/events' => 'events#index'
 
-  get '/user_profile' => 'userprofiles#update'
-  get '/user_profile' => 'userprofiles#show'
+  get '/profile' => 'user_profiles#show'
+  post '/profile' => 'user_profiles#update'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
