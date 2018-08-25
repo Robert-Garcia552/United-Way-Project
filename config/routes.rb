@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
-  root 'sessions#new'
-  resource :sessions
+  resources :sessions
+  resources :users
+  resources :events, only: [:index, :create, :destroy]
+  resources :user_profile, only: [:show, :update]
 
-  resource :users
+  root 'home#index'
+
+  get '/events' => 'events#index'
+  get "/pages/:pages" => "pages#show"
+
+
+  get '/profile' => 'user_profiles#show'
+  post '/profile' => 'user_profiles#update'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
