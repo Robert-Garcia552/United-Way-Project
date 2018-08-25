@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   
       return render action: 'new' unless @user.save
   
-      redirect_to 'new', notice: 'Created user'
+      redirect_to user_profiles_path, notice: 'Created user'
     end
   
     private

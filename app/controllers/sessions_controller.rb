@@ -5,13 +5,13 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.
-              find_by(username: params[:username]).
+              find_by(email: params[:email]).
               try(:authenticate, params[:password])
 
     return render action: 'new' unless @user
 
     session[:user_id] = @user.user_id
-    redirect_to notes_path
+    redirect_to user_profile_path
 
   end
 end

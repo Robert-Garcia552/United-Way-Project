@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   get '/profile' => 'user_profiles#show'
   post '/profile' => 'user_profiles#update'
 
+  post '/sessions/new' => 'sessions#new'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
