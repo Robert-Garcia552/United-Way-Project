@@ -40,12 +40,6 @@
         </ul>
         <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
           <span class="give-button"><button type="button" class="btn btn-danger">GIVE</button></span>
-          <% if user_signed_in? %>
-            <%= button_to "Logout", destroy_user_session_path, class: "btn btn-outline-secondary", method: :delete %>
-            <%= link_to "My Profile", user_profile_path %>
-          <% else %>
-            <%= button_to "Login", new_user_session_path, class: "btn btn-outline-secondary" %>
-          <% end %>
         </ul>
       </div>
     </div>
