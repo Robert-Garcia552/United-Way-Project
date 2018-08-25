@@ -7,8 +7,7 @@ class EventsController < ApplicationController
         start_date  = Date.parse(params[:start_date]) rescue nil
         end_date    = Date.parse(params[:end_date]) rescue nil
         if start_date && end_date
-          events  = current_user
-                      .events
+          events  = Event.all
                       .between(start_date, end_date)
                       .ordered
                       .group_by do |event|
