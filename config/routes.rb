@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   get '/sign-up' => 'users#new'
   get '/profile' => 'users#show'  
 
-
   # User logs and is taken to their profile.
   get '/login' => 'sessions#new'
   get '/profile' => 'sessions#show'
