@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get '/events' => 'events#index'
   get "/pages/:pages" => "pages#show"
 
-
+  # Go here to sign-up directly.
+  get '/sign-up' => 'users#new'
+  # For users logged in.
   get '/profile' => 'user_profiles#show'
   post '/profile' => 'user_profiles#update'
 

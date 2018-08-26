@@ -1,11 +1,11 @@
 class UserProfilesController < ApplicationController
-  before_filter :authorize
+  before_action :require_logged_in
 
-  def update
+  def show
     @user = current_user
   end
 
-  def show
+  def update
     @user = current_user
   end
 
