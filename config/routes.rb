@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :sessions
-  resources :users
+  resource :users
   resources :events, only: [:index, :create, :destroy]
   resources :user_profile, only: [:show, :update]
 
@@ -9,9 +9,12 @@ Rails.application.routes.draw do
   get '/events' => 'events#index'
   get "/pages/:pages" => "pages#show"
 
+  # Go here to sign-up directly. Second takes them to profile.
+  get '/sign-up' => 'users#new'
+  get '/profile' => 'users#show'  
 
-  get '/profile' => 'user_profiles#show'
-  post '/profile' => 'user_profiles#update'
+  # User logs and is taken to their profile.
+  get '/login' => 'sessions#new'
+  get '/profile' => 'sessions#show'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

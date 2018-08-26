@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_25_194146) do
+ActiveRecord::Schema.define(version: 2018_08_25_230652) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -30,12 +30,20 @@ ActiveRecord::Schema.define(version: 2018_08_25_194146) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
     t.string "first_name", null: false
     t.string "middle_name"
     t.string "last_name", null: false
-    t.string "email", null: false
-    t.string "password_digest", null: false
+    t.string "suffix"
+    t.datetime "birthdate", null: false
+    t.string "employer"
+    t.integer "phone_number"
+    t.string "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

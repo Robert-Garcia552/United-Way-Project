@@ -9,12 +9,27 @@ class UsersController < ApplicationController
   
       return render action: 'new' unless @user.save
   
-      redirect_to 'new', notice: 'Created user'
+      redirect_to :action => 'show'
+    end
+
+    def show
+      @profile = User.find_by(params[:id])
     end
   
     private
+
     def user_params
-      params.require(:user).permit(:username, :password, :password_confirmation)
+      params.
+        require(:user).
+          permit(
+                  :email,
+                  :first_name, 
+                  :middle_name, 
+                  :last_name,
+                  :birthdate, 
+                  :employer, 
+                  :password, 
+                  :password_confirmation)
     end
   
   end
