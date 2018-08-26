@@ -11,7 +11,11 @@ class SessionsController < ApplicationController
     return render action: 'new' unless @user
 
     session[:user_id] = @user.user_id
-    redirect_to user_profile_path
-
+    redirect_to :action => 'show'
   end
+
+  def show
+    @profile = User.find_by(params[:id])
+  end
+
 end
