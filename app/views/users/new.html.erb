@@ -1,35 +1,37 @@
+<div class= 'form-group'>
 <h1>Sign up</h1>
 <%= form_for @user do |f| %>
     <p>
         <%= f.label :first_name %>
-        <%= f.text_field :first_name %>
+        <%= f.text_field :first_name, class: 'form-control' %>
     </p>
     <p>
         <%= f.label :middle_name %>
-        <%= f.text_field :middle_name %>
+        <%= f.text_field :middle_name, class: 'form-control' %>
     </p>
     <p>
         <%= f.label :last_name %>
-        <%= f.text_field :last_name %>
+        <%= f.text_field :last_name, class: 'form-control' %>
     </p>
     <p>
         <%= f.label :birthdate %>
-        <%= f.datetime_field :birthdate %>
+        <%= f.datetime_field :birthdate, class: 'form-control' %>
     </p>
     <p>
         <%= f.label :email %>
-        <%= f.text_field :email %>
+        <%= f.text_field :email, class: 'form-control' %>
     </p>
     <p>
         <%= f.label :password %>
-        <%= f.password_field :password %>
+        <%= f.password_field :password, class: 'form-control' %>
     </p>
     <p>
         <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
     </p>
     <p>
-        <%= f.submit %>
+        <%= f.submit :Submit, class: 'btn btn-primary' %>
     </p>
     
     <% end %>
+    </div>
