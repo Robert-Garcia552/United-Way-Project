@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # Go here to sign-up directly.
   get '/sign-up' => 'users#new'
   # For users logged in.
-  get '/profile' => 'user_profiles#show'
+  get '/profile/:id' => 'user_profiles#show'
   post '/profile' => 'user_profiles#update'
 
   post '/sessions/new' => 'sessions#new'

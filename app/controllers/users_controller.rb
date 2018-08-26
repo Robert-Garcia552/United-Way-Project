@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   
       return render action: 'new' unless @user.save
   
-      redirect_to root_path, :notice => 'Created user'
+      redirect_to :url => '/profile/(:id)', :notice => 'Created user'
     end
   
     private
