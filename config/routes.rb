@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :sessions
-  resources :users
+  resource :users
   resources :events, only: [:index, :create, :destroy]
   resources :user_profile, only: [:show, :update]
 

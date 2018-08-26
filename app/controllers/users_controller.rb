@@ -9,17 +9,20 @@ class UsersController < ApplicationController
   
       return render action: 'new' unless @user.save
   
-      redirect_to user_profiles_path, notice: 'Created user'
+      redirect_to root_path, notice: 'Created user'
     end
   
     private
+
     def user_params
       params.
         require(:user).
           permit(
+                  :email,
                   :first_name, 
                   :middle_name, 
-                  :last_name, 
+                  :last_name,
+                  :birthdate, 
                   :employer, 
                   :password, 
                   :password_confirmation)
