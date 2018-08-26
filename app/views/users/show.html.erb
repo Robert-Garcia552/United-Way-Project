@@ -1,11 +1,11 @@
-<h1>THIS IS SUCCESS</h1>
+<h1>THIS IS SUCCESS but with Users Controller</h1>
 
 <div class="container">
   <div>
     <div>
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4">Welcome, <%= @profile[email] %></h1>
+          <h1 class="display-4">Welcome, <%= @profile[:email] %></h1>
           <p class="lead">Behind everything we do, there are people like you who make it happen.  When you give, advocate and volunteer, you become a powerful agent of change– helping to improve the odds for children and families throughout our community.  And, there’s no shortage of ways to get involved. Join us and LIVE UNITED.</p>
         </div>
         <%= button_to 'Edit Profile', events_path, class: "btn btn-primary btn-rounded btn-sm" %>

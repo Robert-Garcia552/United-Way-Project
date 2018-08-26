@@ -11,11 +11,8 @@ Rails.application.routes.draw do
 
   # Go here to sign-up directly.
   get '/sign-up' => 'users#new'
-  # For users logged in.
-  get '/profile/:id' => 'user_profiles#show'
-  post '/profile' => 'user_profiles#update'
 
+  get '/profile' => 'users#show'  
   post '/sessions/new' => 'sessions#new'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

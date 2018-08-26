@@ -9,7 +9,11 @@ class UsersController < ApplicationController
   
       return render action: 'new' unless @user.save
   
-      redirect_to :url => '/profile/(:id)', :notice => 'Created user'
+      redirect_to :action => 'show'
+    end
+
+    def show
+      @profile = User.find_by(params[:id])
     end
   
     private
