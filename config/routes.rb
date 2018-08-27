@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   # Go here to sign-up directly. Second takes them to profile.
   get '/sign-up' => 'users#new'
+  post '/sign-up' => 'users#new'
   get '/profile' => 'users#show'
   post '/users/edit' => 'users#edit'
 
