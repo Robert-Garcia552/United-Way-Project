@@ -13,10 +13,13 @@ Rails.application.routes.draw do
   get '/sign-up' => 'users#new'
   get '/profile' => 'users#show'
   post '/users/edit' => 'users#edit'
+  
+  # WIP
   get '/update' => 'users#update'
   post '/update' => 'users#update'
+  post '/users/:id/edit' => 'users#show'
 
-  # User logs and is taken to their profile.
+  # User logs and is taken to their profile. Need to get redirect to go to another controller.
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#new'
   get '/profile' => 'sessions#show'

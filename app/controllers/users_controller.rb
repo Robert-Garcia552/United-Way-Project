@@ -24,7 +24,7 @@ class UsersController < ApplicationController
       @user = User.find_by(params[:id])
       @user.update_attributes(user_params)
       
-      return render action: 'update' unless @user.save
+      return render action: 'edit' unless @user.save
       
       redirect_to :action => 'show'
     end
