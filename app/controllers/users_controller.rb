@@ -8,8 +8,9 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
   
       return render action: 'new' unless @user.save
-  
-      redirect_to '/login'
+      
+      login(@user)
+      redirect_to profile_path
     end
     
     private
