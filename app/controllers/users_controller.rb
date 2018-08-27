@@ -9,22 +9,9 @@ class UsersController < ApplicationController
   
       return render action: 'new' unless @user.save
   
-      redirect_to new_sessions_path
-    end
-
-    def edit
-      @user = current_user
+      redirect_to '/login'
     end
     
-    def update
-      @user = current_user
-      @user.update_attributes!(user_params)
-      
-      return render action: 'edit' unless @user.save
-      
-      redirect_to :action => 'show'
-    end
-  
     private
 
     def user_params
