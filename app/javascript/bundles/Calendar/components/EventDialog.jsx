@@ -34,11 +34,11 @@ const EventDialog = props => {
           {' '}{ event.state },
           {' '}{ event.zip }<br></br>
           <b>Start: </b>{ dateFns.format(event.start_at, timeFormat) }<br></br>
-          <b>End: </b>{ dateFns.format(event.end_at, timeFormat) }
+          <b>End: </b>{ dateFns.format(event.end_at, timeFormat) }<br></br>
+          <Button onClick={props.handleClose} class="btn btn-info">
+            Register
+          </Button>
         </DialogContentText>
-        <Button onClick={props.handleClose} class="btn btn-info">
-          Register
-        </Button>
       </DialogContent>
         <DialogActions>
         <Button onClick={props.handleClose} color="primary">
