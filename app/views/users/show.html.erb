@@ -6,7 +6,7 @@
           <h1 class="display-4">Welcome, <%= @profile[:first_name] %></h1>
           <p class="lead">Behind everything we do, there are people like you who make it happen.  When you give, advocate and volunteer, you become a powerful agent of change– helping to improve the odds for children and families throughout our community.  And, there’s no shortage of ways to get involved. Join us and LIVE UNITED.</p>
         </div>
-        <%= button_to 'Edit Profile', events_path, class: "btn btn-primary btn-rounded btn-sm" %>
+        <%= button_to 'Edit Profile', action: 'update', class: "btn btn-primary btn-rounded btn-sm" %>
       </div>
       <div class="p-3 mb-2 text-white text-center" style="background-color: #003087">
         <h2>Badges</h2>

@@ -15,6 +15,15 @@ class UsersController < ApplicationController
     def show
       @profile = User.find_by(params[:id])
     end
+
+    def update
+      @user = User.find_by(params[:id])
+      @user.update!(user_params)
+      
+      return render action: 'update' unless @user.save
+      
+      redirect_to :action => 'show'
+    end
   
     private
 

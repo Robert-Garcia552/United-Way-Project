@@ -43,7 +43,7 @@
           <% if current_user %>
              <%= button_to "Logout", destroy_user_session_path, class: "btn btn-outline-secondary", method: :delete %>
            <% else %>
-            <%= button_to "Login", new_session_path, class: "btn btn-outline-secondary" %>
+            <%= button_to "Login", '/login', class: "btn btn-outline-secondary" %>
           <% end %>
         </ul>
       </div>
