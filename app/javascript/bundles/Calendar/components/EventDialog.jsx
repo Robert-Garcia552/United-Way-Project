@@ -36,8 +36,11 @@ const EventDialog = props => {
           <b>Start: </b>{ dateFns.format(event.start_at, timeFormat) }<br></br>
           <b>End: </b>{ dateFns.format(event.end_at, timeFormat) }
         </DialogContentText>
+        <Button onClick={props.handleClose} class="btn btn-info">
+          Register
+        </Button>
       </DialogContent>
-      <DialogActions>
+        <DialogActions>
         <Button onClick={props.handleClose} color="primary">
           Cancel
         </Button>
