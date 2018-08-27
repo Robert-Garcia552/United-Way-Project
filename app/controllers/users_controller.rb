@@ -23,11 +23,14 @@ class UsersController < ApplicationController
         require(:user).
           permit(
                   :email,
+                  :suffix,
                   :first_name, 
                   :middle_name, 
                   :last_name,
-                  :birthdate, 
-                  :employer, 
+                  :birthdate,
+                  :gender, 
+                  :employer,
+                  :phone_number, 
                   :password, 
                   :password_confirmation)
     end
