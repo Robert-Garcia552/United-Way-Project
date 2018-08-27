@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/profile' => 'users#show'
   post '/users/edit' => 'users#edit'
   get '/update' => 'users#update'
+  post '/update' => 'users#update'
 
   # User logs and is taken to their profile.
   get '/login' => 'sessions#new'

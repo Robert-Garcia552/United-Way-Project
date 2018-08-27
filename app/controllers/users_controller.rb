@@ -16,9 +16,13 @@ class UsersController < ApplicationController
       @profile = User.find_by(params[:id])
     end
 
+    def edit
+      @user = User.find_by(params[:id])
+    end
+    
     def update
-      @user = current_user
-      @user.update!(user_params)
+      @user = User.find_by(params[:id])
+      @user.update_attributes(user_params)
       
       return render action: 'update' unless @user.save
       
