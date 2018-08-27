@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     end
 
     def update
-      @user = User.find_by(params[:id])
+      @user = current_user
       @user.update!(user_params)
       
       return render action: 'update' unless @user.save
