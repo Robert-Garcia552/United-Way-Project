@@ -17,7 +17,8 @@ const EventDialog = props => {
       onClose={props.handleClose}
     >
       <DialogTitle>
-        { event.title } - {dateFns.format(event.start_at, dateFormat)}
+        { dateFns.format(event.start_at, dateFormat)}<br></br>
+        { event.title }
       </DialogTitle>
       <DialogContent>
         <DialogContentText>
@@ -26,6 +27,12 @@ const EventDialog = props => {
       </DialogContent>
       <DialogContent>
         <DialogContentText>
+          <b>Location:</b><br></br>
+          { event.location }<br></br>
+          { event.street_address }<br></br>
+          { event.city },
+          {' '}{ event.state },
+          {' '}{ event.zip }<br></br>
           <b>Start: </b>{ dateFns.format(event.start_at, timeFormat) }<br></br>
           <b>End: </b>{ dateFns.format(event.end_at, timeFormat) }
         </DialogContentText>
