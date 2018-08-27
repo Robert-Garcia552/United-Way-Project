@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resource :sessions
-  resources :users
+  resource :users
   resources :events, only: [:index, :create, :destroy]
   resources :user_profile, only: [:show, :update]
 
@@ -21,9 +21,11 @@ Rails.application.routes.draw do
   patch '/update' => 'users#update'
   get '/users/:id/edit' => 'users#edit'
 
+  post '/users/new' => 'users#show'
+
   # User logs and is taken to their profile. Need to get redirect to go to another controller.
   get '/login' => 'sessions#new'
-  post '/login' => 'sessions#new'
+  post '/profile' => 'sessions#show'
   get '/profile' => 'sessions#show'
 
 end

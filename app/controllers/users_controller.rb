@@ -9,11 +9,7 @@ class UsersController < ApplicationController
   
       return render action: 'new' unless @user.save
   
-      redirect_to :action => 'show'
-    end
-
-    def show
-      @user = current_user
+      redirect_to new_sessions_path
     end
 
     def edit
