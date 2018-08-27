@@ -2,6 +2,13 @@
 <h1>Sign up</h1>
 <%= form_for @user do |f| %>
     <p>
+        <%= f.label :suffix %></br>
+        <span><%= f.radio_button :suffix, "Mr." %> Mr. </span></br>
+        <span><%= f.radio_button :suffix, "Miss" %> Miss </span></br>
+        <span><%= f.radio_button :suffix, "Mrs." %> Mrs. </span></br>
+        <span><%= f.radio_button :suffix, "Dr." %> Dr. </span></br>
+    </p>
+    <p>
         <%= f.label :first_name %>
         <%= f.text_field :first_name, class: 'form-control' %>
     </p>
@@ -15,11 +22,24 @@
     </p>
     <p>
         <%= f.label :birthdate %>
-        <%= f.datetime_field :birthdate, class: 'form-control' %>
+        <%= f.date_field :birthdate, class: 'form-control' %>
     </p>
     <p>
         <%= f.label :email %>
         <%= f.text_field :email, class: 'form-control' %>
+    </p>
+    <p>
+        <%= f.label :employer %>
+        <%= f.text_field :employer, class: 'form-control' %>
+    </p>
+    <p>
+        <%= f.label :phone_number %>
+        <%= f.number_field :phone_number, class: 'form-control' %>
+    </p>
+     <p>
+        <%= f.label :gender %></br>
+        <span><%= f.select :gender, ["Male", "Female"] %> Male </span></br>
+        <span><%= f.radio_button :gender, "Female" %> Female </span></br>
     </p>
     <p>
         <%= f.label :password %>
