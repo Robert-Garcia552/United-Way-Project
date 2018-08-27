@@ -51,15 +51,21 @@
           </li>
         </ul>
         <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
-          <li>
-             <%= button_to "Logout", sessions_path, class: "btn btn-outline-secondary", method: :delete %>
-          </li>
-          <li>
-            <%= button_to "Login", '/login', class: "btn btn-outline-secondary" %>
-          </li>
-          <li>
-            <%= button_to "Sign Up", '/sign-up', class: "btn btn-outline-secondary" %>
-          </li>
+          <% if current_user %>
+            <li>
+               <%= button_to "Logout", sessions_path, class: "btn btn-outline-secondary", method: :delete %>
+            </li>
+            <li>
+               <%= button_to "My Profile", user_profile_path(current_user.id), class: "btn btn-outline-secondary" %>
+            </li>
+          <% else %>
+            <li>
+              <%= button_to "Login", '/login', class: "btn btn-outline-secondary" %>
+            </li>
+            <li>
+              <%= button_to "Sign Up", '/sign-up', class: "btn btn-outline-secondary" %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </nav>
