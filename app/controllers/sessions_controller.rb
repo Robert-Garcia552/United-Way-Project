@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  
+
   def new
   end
 
@@ -16,6 +16,11 @@ class SessionsController < ApplicationController
 
   def show
     @profile = User.find_by(params[:id])
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path
   end
 
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :sessions
+  resource :sessions
   resources :users
   resources :events, only: [:index, :create, :destroy]
   resources :user_profile, only: [:show, :update]
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/sign-up' => 'users#new'
   get '/profile' => 'users#show'
   post '/users/edit' => 'users#edit'
-  
+
   # WIP
   get '/update' => 'users#update'
   post '/update' => 'users#update'
