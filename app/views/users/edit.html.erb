@@ -1,0 +1,56 @@
+<div class= 'form-group'>
+<h1 class="display-4">Welcome, <%= @user[:first_name] %></h1>
+<%= form_for @user do |f| %>
+    <p>
+        <%= f.label :suffix %></br>
+        <span><%= f.radio_button :suffix, "Mr." %> Mr. </span></br>
+        <span><%= f.radio_button :suffix, "Miss" %> Miss </span></br>
+        <span><%= f.radio_button :suffix, "Mrs." %> Mrs. </span></br>
+        <span><%= f.radio_button :suffix, "Dr." %> Dr. </span></br>
+    </p>
+    <p>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: 'form-control' %>
+    </p>
+    <p>
+        <%= f.label :middle_name %>
+        <%= f.text_field :middle_name, class: 'form-control' %>
+    </p>
+    <p>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: 'form-control' %>
+    </p>
+    <p>
+        <%= f.label :birthdate %>
+        <%= f.date_field :birthdate, class: 'form-control' %>
+    </p>
+    <p>
+        <%= f.label :email %>
+        <%= f.text_field :email, class: 'form-control' %>
+    </p>
+    <p>
+        <%= f.label :employer %>
+        <%= f.text_field :employer, class: 'form-control' %>
+    </p>
+    <p>
+        <%= f.label :phone_number %>
+        <%= f.number_field :phone_number, class: 'form-control' %>
+    </p>
+     <p>
+        <%= f.label :gender %></br>
+        <%= f.select :gender, options_for_select(["Male", "Female"]) %> </br>
+    </p>
+    <p>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+    </p>
+    <p>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </p>
+    <p>
+        <%= f.submit :Update_profile, class: 'btn btn-primary' %>
+    </p>
+    
+    <% end %>
+    </div>

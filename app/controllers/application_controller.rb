@@ -1,13 +1,14 @@
 class ApplicationController < ActionController::Base
-  layout :by_resource
- 
-  private
- 
-  def by_resource
-    if devise_controller?
-      "devise"
-    else
-      "application"
-    end
+  helper_method :current_user
+
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
   end
+
+  def require_logged_in
+    return true if current_user
+
+    return redirect_to root_path
+  end
+
 end

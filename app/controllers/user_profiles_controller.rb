@@ -1,37 +1,11 @@
 class UserProfilesController < ApplicationController
-
-  def update
-    @user = current_user
-    @user_profile = user_profile.find(params[:id])
-    index
-  end
+  before_action :require_logged_in
 
   def show
+    @user = current_user
   end
 
-private
-
-  def index
-    if @user_profile
-      render "show"
-    else
-      render "update"
-    end
+  def update
   end
 
-  def user_profile_params
-    params.require(:user_profile)
-              .permit(
-                :first_name,
-                :middle_name,
-                :last_name,
-                :suffix,
-                :email,
-                :birthdate,
-                :employer,
-                :phone_number,
-                :gender
-              )
-
-  end
 end

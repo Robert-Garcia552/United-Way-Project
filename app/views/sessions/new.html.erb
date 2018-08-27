@@ -1,0 +1,20 @@
+<div>
+<h1 >Log in</h1>
+<%= form_tag sessions_path do %>
+<p>
+    <%= label_tag :email, "Email", class: 'exampleInputEmail1' %>
+    <%= text_field_tag :email, "", class: 'form-control'  %>
+</p>
+<p>
+    <%= label_tag :password %>
+    <%= password_field_tag :password, "", class: 'form-control' %>
+</p>
+<p>
+     <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+</p>
+<p>
+    <%= submit_tag 'Log in', class: 'btn btn-primary' %>
+</p>
+<% end %>
+</div>
