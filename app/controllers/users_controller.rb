@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
     def new
       @user = User.new
     end
@@ -15,6 +15,19 @@ class UsersController < ApplicationController
     def show
       @profile = User.find_by(params[:id])
     end
+
+    def edit
+      @user = User.find_by(params[:id])
+    end
+    
+    def update
+      @user = User.find_by(params[:id])
+      @user.update_attributes(user_params)
+      
+      return render action: 'edit' unless @user.save
+      
+      redirect_to :action => 'show'
+    end
   
     private
 
@@ -23,11 +36,14 @@ class UsersController < ApplicationController
         require(:user).
           permit(
                   :email,
+                  :suffix,
                   :first_name, 
                   :middle_name, 
                   :last_name,
-                  :birthdate, 
-                  :employer, 
+                  :birthdate,
+                  :gender, 
+                  :employer,
+                  :phone_number, 
                   :password, 
                   :password_confirmation)
     end
