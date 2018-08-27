@@ -1,6 +1,6 @@
 <div class= 'form-group'>
 <h1 class="display-4">Welcome, <%= current_user.first_name %></h1>
-<%= form_for @user do |f| %>
+<%= form_for @user, url: session_path(@user.id) do |f| %>
     <p>
         <%= f.label :suffix %></br>
         <span><%= f.radio_button :suffix, "Mr." %> Mr. </span></br>
