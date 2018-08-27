@@ -11,7 +11,6 @@ Rails.application.routes.draw do
 
   # Go here to sign-up directly. Second takes them to profile.
   get '/sign-up' => 'users#new'
-<<<<<<< HEAD
   post '/sign-up' => 'users#new'
   get '/profile' => 'users#show'
   post '/users/edit' => 'users#edit'
@@ -21,15 +20,12 @@ Rails.application.routes.draw do
   post '/update' => 'users#update'
   patch '/update' => 'users#update'
   get '/users/:id/edit' => 'users#edit'
-=======
   post '/sessions/:id/edit' => 'sessions#edit'
   get '/sessions/:id' => 'sessions#show'
 
   # WIP
-  
-  post '/sessions/:id/edit' => 'sessions#show'
->>>>>>> sign up goes to sessions
 
+  post '/sessions/:id/edit' => 'sessions#show'
   post '/users/new' => 'users#show'
   post '/edit' => 'sessions#edit'
   post '/sessions/edit' => 'sessions#edit'
