@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get '/update' => 'users#update'
   post '/update' => 'users#update'
   patch '/update' => 'users#update'
-  post '/users/:id/edit' => 'users#show'
+  get '/users/:id/edit' => 'users#edit'
 
   # User logs and is taken to their profile. Need to get redirect to go to another controller.
   get '/login' => 'sessions#new'
