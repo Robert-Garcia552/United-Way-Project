@@ -2,7 +2,7 @@ class UserProfilesController < ApplicationController
   before_action :require_logged_in
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def update
