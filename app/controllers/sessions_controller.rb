@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  
+
   def new
   end
 
@@ -10,12 +10,17 @@ class SessionsController < ApplicationController
 
     return render action: 'new' unless @user
 
-    session[:user_id] = @user.user_id
+    session[:user_id] = @user.id
     redirect_to :action => 'show'
   end
 
   def show
     @profile = User.find_by(params[:id])
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path
   end
 
 end
