@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def show
-    @profile = User.find_by(params[:id])
+    @user = current_user
   end
 
   def destroy
