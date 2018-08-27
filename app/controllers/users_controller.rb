@@ -13,16 +13,16 @@ class UsersController < ApplicationController
     end
 
     def show
-      @profile = User.find_by(params[:id])
+      @profile = current_user
     end
 
     def edit
-      @user = User.find_by(params[:id])
+      @user = current_user
     end
     
     def update
-      @user = User.find_by(params[:id])
-      @user.update_attributes(user_params)
+      @user = current_user
+      @user.update_attributes!(user_params)
       
       return render action: 'edit' unless @user.save
       
