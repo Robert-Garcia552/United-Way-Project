@@ -16,11 +16,12 @@
   </head>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="./scripts.js"></script>
+  <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+  <!-- <script src="./scripts.js"></script> -->
 
   <body>
 
@@ -29,11 +30,11 @@
         LOGO
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" style="color: black"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="active">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
             <a href="<%= root_path %>" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
@@ -52,10 +53,7 @@
             <span class="give-button"><button type="button" class="btn btn-danger">GIVE</button></span>
           </li>
         </ul>
-        <ul class="nav navbar-nav flex-row justify-content-between ml-auto row">
-          <li>
-            <%= button_to "Logout", sessions_path, class: "btn btn-outline-secondary", method: :delete %>
-          </li>
+        <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
           <li>
              <%= button_to "Logout", sessions_path, class: "btn btn-outline-secondary", method: :delete %>
           </li>
@@ -73,48 +71,50 @@
     <div class='container'>
       <%= yield %>
     </div>
+
+
+      <!-- Footer -->
+      <footer class="page-footer font-small pt-4">
+        <div class="container">
+          <ul class="list-unstyled list-inline text-center">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-fb mx-1"
+                href="https://www.facebook.com/UnitedWayMiami/" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-tw mx-1"
+                href="https://twitter.com/unitedwaymiami" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-tw mx-1"
+                href="https://www.instagram.com/unitedwaymiami/" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-tw mx-1"
+                href="https://www.linkedin.com/company/united-way-of-miami-dade/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-tw mx-1"
+                href="https://www.snapchat.com/add/unitedwaymiami" target="_blank">
+                <i class="fab fa-snapchat"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-copyright text-center py-3">©2018 UnitedWayMiami.org</a>
+        </div>
+
+      </footer>
   </body>
 
 
-  <!-- Footer -->
-  <footer class="page-footer font-small pt-4">
-    <div class="container">
-      <ul class="list-unstyled list-inline text-center">
-        <li class="list-inline-item">
-          <a class="btn-floating btn-fb mx-1"
-            href="https://www.facebook.com/UnitedWayMiami/" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-tw mx-1"
-            href="https://twitter.com/unitedwaymiami" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-tw mx-1"
-            href="https://www.instagram.com/unitedwaymiami/" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-tw mx-1"
-            href="https://www.linkedin.com/company/united-way-of-miami-dade/" target="_blank">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-tw mx-1"
-            href="https://www.snapchat.com/add/unitedwaymiami" target="_blank">
-            <i class="fab fa-snapchat"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="footer-copyright text-center py-3">©2018 UnitedWayMiami.org</a>
-    </div>
-
-  </footer>
 </html>
