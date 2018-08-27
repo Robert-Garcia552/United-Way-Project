@@ -41,9 +41,9 @@
 }
 
 body {
-    font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    font-size: 1em;
-    font-weight: 300;
+    font-family: 'Arial', sans-serif;
+    font-size: .5em;
+    font-weight: 100;
     line-height: 1.5;
     color: var(--text-color);
     background: var(--bg-color);
