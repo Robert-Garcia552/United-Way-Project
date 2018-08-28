@@ -45,6 +45,7 @@ class Calendar extends React.Component {
   render() {
     const { currentMonth, events, formDialogOpen,
             event, eventDialogOpen, currentDate } = this.state;
+    const { currentUser } = this.props;
     const { startDate, endDate, monthStart } = this.getMonthConsts(currentMonth);
     return (
       <div>
