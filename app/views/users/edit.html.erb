@@ -2,6 +2,7 @@
 <h1 class="display-4">Welcome, <%= @user[:first_name] %></h1>
 <%= form_for @user do |f| %>
     <p>
+        <span> * required field </span></br>
         <%= f.label :suffix %></br>
         <span><%= f.radio_button :suffix, "Mr." %> Mr. </span></br>
         <span><%= f.radio_button :suffix, "Miss" %> Miss </span></br>
@@ -49,7 +50,7 @@
         <%= f.password_field :password_confirmation, class: 'form-control' %>
     </p>
     <p>
-        <%= f.submit :Update_profile, class: 'btn btn-primary' %>
+        <%= f.submit "Update Profile", class: 'btn btn-primary' %>
     </p>
     
     <% end %>
