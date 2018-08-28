@@ -73,6 +73,7 @@ class Calendar extends React.Component {
         <EventDialog
           open={eventDialogOpen}
           event={event}
+          user={currentUser}
           handleClose={this.handleEventDialogClose}
           destroyEvent={this.destroyEvent}
         />
