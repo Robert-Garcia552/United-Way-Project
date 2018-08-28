@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
   belongs_to :user, optional: true
+  has_many :rsvps
 
   scope :ordered, -> { order(:start_at) }
   scope :between, ->(start_date, end_date) do
