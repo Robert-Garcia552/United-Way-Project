@@ -78,6 +78,7 @@ class Calendar extends React.Component {
           handleClose={this.handleEventDialogClose}
           destroyEvent={this.destroyEvent}
           rsvpFor={this.rsvpFor}
+          cancelRsvp={this.cancelRsvp}
         />
         <FormDialog
           open={formDialogOpen}
@@ -237,6 +238,24 @@ class Calendar extends React.Component {
         this.setState({events});
       })
   }
+
+  
+  cancelRsvp = event => {
+    const eventDate = dateFns.format(event.start_at, "YYYY-MM-DD");
+    let { events } = this.state;
+    let dailyEvents = events[eventDate];
+    axios.delete(`/events/${event.id}/rsvps`, {headers: headers})
+      .then((response) => {
+        dailyEvents.forEach((e) => {
+          if(e.id === response.data.event_id){
+            e.attending = false
+          }
+        });
+        this.setState({events});
+      })
+    }
+
+
 
   resetMonth = month => {
     const { formattedStartDate, formattedEndDate } = this.getMonthConsts(month);
