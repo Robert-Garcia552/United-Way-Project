@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get '/sessions/:id' => 'sessions#show'
 
   # WIP
-  
+  get '/edit' => 'sessions#edit'
   post '/sessions/:id/edit' => 'sessions#show'
 
   post '/users/new' => 'users#show'
