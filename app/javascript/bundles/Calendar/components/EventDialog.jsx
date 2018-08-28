@@ -6,10 +6,11 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import DialogActions from '@material-ui/core/DialogActions';
+import Axios from '../../../../../node_modules/axios';
 
 const actionButton = (props, event) => {
   if(props.user && event.attending) {
-    return <Button>Stop Attending</Button>
+    return <Button onClick={ () => { props.cancelRsvp(event)  } } className="btn btn-danger">Stop Attending</Button>
   }else if(props.user){
     return <Button onClick={ () => { props.rsvpFor(event) } } className="btn btn-info">Register</Button>
   }else{
