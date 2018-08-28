@@ -26,7 +26,8 @@ class Calendar extends React.Component {
       title: '',
       description: '',
       start_at: new Date(),
-      end_at: new Date()
+      end_at: new Date(),
+      attending: false
     }
   }
 
@@ -76,6 +77,7 @@ class Calendar extends React.Component {
           user={currentUser}
           handleClose={this.handleEventDialogClose}
           destroyEvent={this.destroyEvent}
+          rsvpFor={this.rsvpFor}
         />
         <FormDialog
           open={formDialogOpen}
@@ -218,6 +220,21 @@ class Calendar extends React.Component {
       })
       .catch((error) => {
         console.log(error.response)
+      })
+  }
+
+  rsvpFor = event => {
+    const eventDate = dateFns.format(event.start_at, "YYYY-MM-DD");
+    let { events } = this.state;
+    let dailyEvents = events[eventDate];
+    axios.post(`/events/${event.id}/rsvps.json`, {}, {headers: headers})
+      .then((response) => {
+        dailyEvents.forEach((e) => {
+          if(e.id === response.data.event_id){
+            e.attending = true
+          }
+        });
+        this.setState({events});
       })
   }
 

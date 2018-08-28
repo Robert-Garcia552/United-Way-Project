@@ -10,8 +10,13 @@ class EventsController < ApplicationController
           events  = Event
                       .between(start_date, end_date)
                       .ordered
+                      .map do |event|
+                        event.attributes.merge(
+                          "attending" => Rsvp.where(event: event, user: current_user).exists?
+                        )
+                      end
                       .group_by do |event|
-                        event.start_at.to_date
+                        event["start_at"].to_date
                       end
           render json: events
         else

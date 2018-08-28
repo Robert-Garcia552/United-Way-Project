@@ -7,18 +7,21 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import DialogActions from '@material-ui/core/DialogActions';
 
+const actionButton = (props, event) => {
+  if(props.user && event.attending) {
+    return <Button>Stop Attending</Button>
+  }else if(props.user){
+    return <Button onClick={ () => { props.rsvpFor(event) } } className="btn btn-info">Register</Button>
+  }else{
+    return <Button onClick={ () => { Turbolinks.visit('/sign-up') } } className="btn btn-danger">Sign Up</Button>
+  }
+}
+
 const EventDialog = props => {
   const { open, event } = props;
   const dateFormat = "MMMM Do";
   const timeFormat = "h:mm a";
 
-  const regButton = () => {
-    if (props.user) {
-    return <Button onClick={ () => { Turbolinks.visit('/') } } class="btn btn-info">Register</Button>
-    } else {
-    return <Button onClick={ () => { Turbolinks.visit('/sign-up') } } class="btn btn-danger">Sign Up</Button>
-    }
-  }
   return(
     <Dialog
       open={open}
@@ -52,8 +55,7 @@ const EventDialog = props => {
         <Button onClick={ () => { props.destroyEvent(event) } } color="secondary">
           Delete
         </Button>
-
-        {regButton()}
+        { actionButton(props, event) }
       </DialogActions>
     </Dialog>
   );
