@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   resources :sessions
   resources :users
-  resources :events, only: [:index, :create, :destroy]
+  resources :events
   resources :user_profile, only: [:show, :update]
 
   root 'home#index'
 
-  get '/events' => 'events#index'
   get "/pages/:pages" => "pages#show"
 
   # Go here to sign-up directly. Second takes them to profile.
@@ -23,7 +22,7 @@ Rails.application.routes.draw do
   get '/sessions/:id' => 'sessions#show'
 
   # WIP
-  
+
   post '/sessions/:id/edit' => 'sessions#show'
 
   post '/users/new' => 'users#show'

@@ -11,6 +11,14 @@ const EventDialog = props => {
   const { open, event } = props;
   const dateFormat = "MMMM Do";
   const timeFormat = "h:mm a";
+
+  const regButton = () => {
+    if (props.user) {
+    return <Button onClick={ () => { Turbolinks.visit('/') } } class="btn btn-info">Register</Button>
+    } else {
+    return <Button onClick={ () => { Turbolinks.visit('/sign-up') } } class="btn btn-danger">Sign Up</Button>
+    }
+  }
   return(
     <Dialog
       open={open}
@@ -35,9 +43,6 @@ const EventDialog = props => {
           {' '}{ event.zip }<br></br>
           <b>Start: </b>{ dateFns.format(event.start_at, timeFormat) }<br></br>
           <b>End: </b>{ dateFns.format(event.end_at, timeFormat) }<br></br>
-          <Button onClick={props.handleClose} class="btn btn-info">
-            Register
-          </Button>
         </DialogContentText>
       </DialogContent>
         <DialogActions>
@@ -47,6 +52,8 @@ const EventDialog = props => {
         <Button onClick={ () => { props.destroyEvent(event) } } color="secondary">
           Delete
         </Button>
+
+        {regButton()}
       </DialogActions>
     </Dialog>
   );
