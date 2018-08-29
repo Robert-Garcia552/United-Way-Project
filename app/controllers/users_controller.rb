@@ -8,9 +8,12 @@ class UsersController < ApplicationController
 
     def create
       @user = User.new(user_params)
-      return render :new unless @user.save
-      login(@user)
-      redirect_to @user, success: "User successfully created"
+        if @user.save
+          login(@user)
+          redirect_to @user, success: "User successfully created"
+        else
+          redirect_to new_user_path, danger: "An account with that email may already exist"
+        end
     end
 
     def show
