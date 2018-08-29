@@ -1,7 +1,7 @@
-class WelcomeMailer < ActionMailer::Base
+class WelcomeMailer < ApplicationMailer
    
     def welcome
-        @user = User.find(params[:id])
+        @user = params[:user]
         mail(to: @user.email, subject: "Thanks for connecting with United Way!")
     end
 
