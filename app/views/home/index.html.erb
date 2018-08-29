@@ -39,23 +39,7 @@ With you by our side, we know we can make this vision a reality. We invite you t
     </div>
 
     <!-- Upcoming Events -->
-    <div class="container-events">
-      <h2>Upcoming Events</h2>
-      <div class="row">
-        <div class="col-sm">
-          <%= image_tag "home/community.jpg", class: ["d-block", "w-100"]%>
-          <b>Event 1</b>
-        </div>
-        <div class="col-sm">
-          <%= image_tag "home/community.jpg", class: ["d-block", "w-100"]%>
-          <b>Event 2</b>
-        </div>
-        <div class="col-sm">
-          <%= image_tag "home/community.jpg", class: ["d-block", "w-100"]%>
-          <b>Event 3</b>
-        </div>
-      </div>
-    </div>
+    <%= render 'shared/upcoming_events', events: @events %>
 
   </body>
 </html>

@@ -11,7 +11,11 @@ class User < ApplicationRecord
     has_many :events
     has_many :rsvps
     has_many :attending_events, through: :rsvps, source: :event
-   
+
+    def next_three_events
+        attending_events.future.first(3)
+    end
+
     private
 
     def send_welcome_email
