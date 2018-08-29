@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    validates :email, presence: true
+    validates :first_name, :last_name, :birthdate, :email, :phone_number, presence: true
 
     after_create_commit :send_welcome_email
     

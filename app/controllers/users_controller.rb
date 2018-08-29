@@ -12,7 +12,7 @@ class UsersController < ApplicationController
           login(@user)
           redirect_to @user, success: "User successfully created"
         else
-          redirect_to new_user_path, danger: "An account with that email may already exist"
+          redirect_to new_user_path, danger: "Invalid login due to: #{@user.errors.full_messages.join(', ').downcase}."
         end
     end
 
