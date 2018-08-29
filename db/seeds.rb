@@ -352,8 +352,8 @@ DATA = {
                   end_at: "2018-09-21 12:00:00 EDT",
                   location: "",
                   street_address: "",
-                  city: "",
-                  state: "",
+                  city: "Miami",
+                  state: "FL",
                   zip: ""
                 },
 
@@ -370,8 +370,8 @@ DATA = {
                   end_at: "2018-09-24 12:00:00 EDT",
                   location: "",
                   street_address: "",
-                  city: "",
-                  state: "",
+                  city: "Miami",
+                  state: "FL",
                   zip: ""
                 },
 
