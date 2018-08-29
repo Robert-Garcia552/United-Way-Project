@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       return render :new unless @user.save
       login(@user)
-      redirect_to @user
+      redirect_to @user, success: "User successfully created"
     end
 
     def show
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
     def update
       @user.update(user_params)
-      redirect_to @user
+      redirect_to @user, success: "User successfully updated"
     end
 
     private

@@ -1,4 +1,6 @@
 <div class= 'form-group'>
+
+
 <h1 class="display-4">Welcome, <%= current_user.first_name %></h1>
 <%= form_for @user, url: session_path(@user.id) do |f| %>
     <p>
@@ -52,6 +54,6 @@
     <p>
         <%= f.submit "Update Profile", class: 'btn btn-primary' %>
     </p>
-    
+
     <% end %>
     </div>

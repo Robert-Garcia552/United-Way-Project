@@ -22,6 +22,7 @@
 
   <body>
 
+
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00008B">
       <a class="navbar-brand" href="<%= root_path %>">
         LOGO
@@ -72,6 +73,11 @@
 
 
     <div class='container'>
+      <% flash.each do |name, msg| %>
+        <div class='alert alert-<%= name %>'>
+          <%= msg %>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
 
