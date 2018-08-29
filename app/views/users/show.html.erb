@@ -36,50 +36,9 @@
           </div>
         </div>
       </div>
-      <div class="p-3 mb-2 text-white text-center" style="background-color: #003087">
-        <h2>Registered Events</h2>
-          <div class="row">
-            <div class="col-sm">
-              <b>Event 1 Name</b>
-              <hr>
-              <span>Start at | End at</span>
-              <hr>
-              <span>Location</span>
-            </div>
-            <div class="col-sm">
-              <b>Event 2 Name</b>
-              <hr>
-              <span>Start at | End at</span>
-              <hr>
-              <span>Location</span>
-            </div>
-            <div class="col-sm">
-              <b>Event 3 Name</b>
-              <hr>
-              <span>Start at | End at</span>
-              <hr>
-              <span>Location</span>
-            </div>
-          </div>
-        </div>
-
-      <div class="p-3 mb-2 text-white text-center" style="background-color: #003087">
-        <h2>Upcoming Events</h2>
-        <div class="row">
-          <div class="col-sm">
-            <%= image_tag "home/community.jpg", class: ["d-block", "w-100"]%>
-            <b>Event 1</b>
-          </div>
-          <div class="col-sm">
-            <%= image_tag "home/community.jpg", class: ["d-block", "w-100"]%>
-            <b>Event 2</b>
-          </div>
-          <div class="col-sm">
-            <%= image_tag "home/community.jpg", class: ["d-block", "w-100"]%>
-            <b>Event 3</b>
-          </div>
-        </div>
-        <%= link_to 'See All Events', events_path, class: "btn btn-primary btn-rounded btn-sm" %>
-      </div>
+      <% if @my_events.any? %>
+        <%= render 'shared/upcoming_events', events: @my_events, title: "Registered" %>
+      <% end %>
+      <%= render 'shared/upcoming_events', events: @events, title: "Upcoming" %>
   </div>
 </div>

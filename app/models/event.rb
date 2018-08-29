@@ -9,5 +9,10 @@ class Event < ApplicationRecord
       start_date.beginning_of_day.to_datetime,
       end_date.end_of_day.to_datetime
     )
+    
+
   end
+  
+  scope :future, -> { where("start_at >= ?", Time.now )}
+
 end

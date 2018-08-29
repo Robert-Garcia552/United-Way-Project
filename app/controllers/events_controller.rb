@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-
+  
   def index
     respond_to do |format|
       format.html
@@ -39,6 +39,10 @@ class EventsController < ApplicationController
     event = current_user.events.find(params[:id])
     event.destroy
     render json: event
+  end
+
+  def show
+    @event = Event.future.first(3)
   end
 
   private

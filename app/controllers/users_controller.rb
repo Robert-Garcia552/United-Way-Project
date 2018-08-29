@@ -17,6 +17,8 @@ class UsersController < ApplicationController
     end
 
     def show
+      @events = Event.future.first(3)
+      @my_events = current_user.attending_events
     end
 
     def edit
