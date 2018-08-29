@@ -7,4 +7,5 @@ class User < ApplicationRecord
 
     has_many :rsvps
     has_many :attending_events, through: :rsvps, source: :event
+   
 end
