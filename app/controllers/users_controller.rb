@@ -54,7 +54,7 @@ class UsersController < ApplicationController
                   :phone_number,
                   :password,
                   :password_confirmation,
-                  :avatar
+                  :image
                 )
     end
 
