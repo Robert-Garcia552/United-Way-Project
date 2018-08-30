@@ -85,6 +85,7 @@ class Calendar extends React.Component {
           destroyEvent={this.destroyEvent}
           rsvpFor={this.rsvpFor}
           cancelRsvp={this.cancelRsvp}
+          currentUser={currentUser}
         />
         { currentUser && currentUser.admin &&
           <FormDialog
