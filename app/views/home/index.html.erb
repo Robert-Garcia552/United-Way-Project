@@ -1,7 +1,6 @@
 
-
-  <!-- Carousel -->
-  <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+<div class="container-fluid">
+  <div id="myCarousel" class="carousel slide carousel-fade full-width-carousel" data-ride="carousel">
 
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
@@ -28,18 +27,26 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
+  </div>
 
-    <!-- Who We Are -->
-    <div class="container">
-      <h1 class="mt-5 text-center">United Way of Miami-Dade</h1>
-      <h3 class="mt-5 text-center">WHO WE ARE</h1>
-      <p>We are on a mission to build a stronger Miami — a Miami where all children have the opportunity to learn and thrive, where families are financially secure and where people can live their lives to the fullest because they have the good health to do so — today and for generations to come.
+  <!-- Who We Are -->
+  <div id="home-intro" class="max-width: 100%">
 
-With you by our side, we know we can make this vision a reality. We invite you to join us in this life-changing work.</p>
+    <h1 class="mt-5 text-center">United Way of Miami-Dade</h1>
+    <h3 class="mt-5 text-center">WHO WE ARE</h1>
+    <p>We are on a mission to build a stronger Miami — a Miami where all children have the opportunity to learn and thrive, where families are financially secure and where people can live their lives to the fullest because they have the good health to do so — today and for generations to come.
+
+      With you by our side, we know we can make this vision a reality. We invite you to join us in this life-changing work.</p>
+
+  </div>
+
+  <!-- Upcoming Events -->
+  <div id="home-upcoming-events container-fluid">
+    <div class="full-width">
+    <%= render 'shared/upcoming_events', events: @events, title: "Upcoming", class: "d-flex justify-content-center" %>
     </div>
-
-    <!-- Upcoming Events -->
-    <%= render 'shared/upcoming_events', events: @events, title: "Upcoming" %>
+  </div>
+</div>
 
   </body>
 </html>
