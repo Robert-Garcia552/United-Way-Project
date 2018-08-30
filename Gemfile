@@ -71,3 +71,7 @@ gem 'react_on_rails'
 gem 'mini_racer', platforms: :ruby
 gem 'bootstrap', '~> 4.1.3'
 gem 'sidekiq'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'aws-sdk', '~> 3'
+
+
