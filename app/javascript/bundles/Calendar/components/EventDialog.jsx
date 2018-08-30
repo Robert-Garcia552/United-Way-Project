@@ -14,7 +14,7 @@ const actionButton = (props, event) => {
   }else if(props.user){
     return <Button onClick={ () => { props.rsvpFor(event) } } className="btn btn-info">Register</Button>
   }else{
-    return <Button onClick={ () => { Turbolinks.visit('/sign-up') } } className="btn btn-danger">Sign Up</Button>
+    return <Button onClick={ () => { Turbolinks.visit('/users/new') } } className="btn btn-danger">Sign Up</Button>
   }
 }
 
