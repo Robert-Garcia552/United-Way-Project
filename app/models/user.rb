@@ -8,7 +8,6 @@ class User < ApplicationRecord
 
     has_one :user_profile
     has_one_attached :avatar
-
     has_many :events
     has_many :rsvps
     has_many :attending_events, through: :rsvps, source: :event
