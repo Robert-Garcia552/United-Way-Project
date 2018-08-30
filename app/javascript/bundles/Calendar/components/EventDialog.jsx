@@ -6,7 +6,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import DialogActions from '@material-ui/core/DialogActions';
-import { FacebookShareButton, FacebookIcon, GooglePlusIcon, GooglePlusShareButton, EmailIcon, EmailShareButton, TwitterIcon, TwitterShareButton} from 'react-share'
+import { FacebookShareButton, FacebookIcon, GooglePlusIcon, GooglePlusShareButton, EmailIcon, EmailShareButton, TwitterIcon, TwitterShareButton, LinkedinIcon, LinkedinShareButton} from 'react-share'
 
 const actionButton = (props, event) => {
   if(props.user && event.attending) {
@@ -56,6 +56,9 @@ const EventDialog = props => {
         <TwitterShareButton url={`http://google.com`}>
           <TwitterIcon size={32} round={true} />
         </TwitterShareButton>
+        <LinkedinShareButton url={`http://google.com`}>
+          <LinkedinIcon size={32} round={true} />
+        </LinkedinShareButton>
         <GooglePlusShareButton url={`http://google.com`}>
           <GooglePlusIcon size={32} round={true} />
         </GooglePlusShareButton>
