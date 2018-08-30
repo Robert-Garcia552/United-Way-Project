@@ -39,6 +39,51 @@ const FormDialog = props => {
             onChange={props.handleDescriptionChange}
             fullWidth
           />
+          <TextField
+            margin="dense"
+            id="location"
+            label="Location"
+            type="text"
+            value={event.location}
+            onChange={props.handleLocationChange}
+            fullWidth
+          />
+          <TextField
+            margin="dense"
+            id="street_address"
+            label="Street Address"
+            type="text"
+            value={event.street_address}
+            onChange={props.handleStreetAddressChange}
+            fullWidth
+          />
+          <TextField
+            margin="dense"
+            id="city"
+            label="City"
+            type="text"
+            value={event.city}
+            onChange={props.handleCityChange}
+            fullWidth
+          />
+          <TextField
+            margin="dense"
+            id="state"
+            label="State"
+            type="text"
+            value={event.state}
+            onChange={props.handleStateChange}
+            fullWidth
+          />
+          <TextField
+            margin="dense"
+            id="zip"
+            label="Zip Code"
+            type="text"
+            value={event.zip}
+            onChange={props.handleZipChange}
+            fullWidth
+          />
           <FormControl
             fullWidth
             margin="dense"
