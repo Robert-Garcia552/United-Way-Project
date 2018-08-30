@@ -74,6 +74,7 @@ class Calendar extends React.Component {
             monthStart={monthStart}
             startDate={startDate}
             endDate={endDate}
+            currentUser={currentUser}
           />
         </div>
         <EventDialog
@@ -85,21 +86,23 @@ class Calendar extends React.Component {
           rsvpFor={this.rsvpFor}
           cancelRsvp={this.cancelRsvp}
         />
-        <FormDialog
-          open={formDialogOpen}
-          event={event}
-          handleClose={this.handleFormDialogClose}
-          handleTitleChange={this.handleTitleChange}
-          handleDescriptionChange={this.handleDescriptionChange}
-          handleLocationChange={this.handleLocationChange}
-          handleStreetAddressChange={this.handleStreetAddressChange}
-          handleCityChange={this.handleCityChange}
-          handleStateChange={this.handleStateChange}
-          handleZipChange={this.handleZipChange}
-          handleStartAtChange={this.handleStartAtChange}
-          handleEndAtChange={this.handleEndAtChange}
-          createEvent={this.createEvent}
-        />
+        { currentUser && currentUser.admin &&
+          <FormDialog
+            open={formDialogOpen}
+            event={event}
+            handleClose={this.handleFormDialogClose}
+            handleTitleChange={this.handleTitleChange}
+            handleDescriptionChange={this.handleDescriptionChange}
+            handleLocationChange={this.handleLocationChange}
+            handleStreetAddressChange={this.handleStreetAddressChange}
+            handleCityChange={this.handleCityChange}
+            handleStateChange={this.handleStateChange}
+            handleZipChange={this.handleZipChange}
+            handleStartAtChange={this.handleStartAtChange}
+            handleEndAtChange={this.handleEndAtChange}
+            createEvent={this.createEvent}
+          />
+        }
       </div>
     );
   }
