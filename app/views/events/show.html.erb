@@ -1,2 +1,6 @@
 <%= react_component 'Calendar',
-    props: {currentUser:  current_user, event: @event } %>
+    props: {
+        currentUser:  current_user&.attributes&.except("password_digest"), 
+        event: @event 
+    } 
+%>
