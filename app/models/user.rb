@@ -7,7 +7,7 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
 
     has_one :user_profile
-    has_one_attached :avatar
+    has_one_attached :image
     has_many :events
     has_many :rsvps
     has_many :attending_events, through: :rsvps, source: :event
