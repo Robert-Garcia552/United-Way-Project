@@ -10,6 +10,10 @@
         <span><%= f.radio_button :suffix, "Dr." %> Dr. </span></br>
     </p>
     <p>
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar %>
+    </p>
+    <p>
         <%= f.label :first_name %><span> * </span>
         <%= f.text_field :first_name, class: 'form-control' %>
     </p>
@@ -52,6 +56,6 @@
     <p>
         <%= f.submit :Submit, class: 'btn btn-primary' %>
     </p>
-    
+
     <% end %>
     </div>
