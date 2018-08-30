@@ -58,7 +58,8 @@ const EventDialog = props => {
           Delete
         </Button>
         }
-        { actionButton(props, event) }
+        {actionButton(props, event)} 
+
       </DialogActions>
     </Dialog>
   );
