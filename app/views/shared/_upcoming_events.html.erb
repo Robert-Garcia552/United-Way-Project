@@ -5,7 +5,7 @@
             <% group.each do |event| %>
                 <div class="col-sm">
                     <%= image_tag "home/community.jpg", class: ["d-block", "w-100"]%>
-                    <b><%= event.title %></b>
+                    <b><%= link_to event.title, event %></b>
                 </div>
             <% end %>
         </div>
