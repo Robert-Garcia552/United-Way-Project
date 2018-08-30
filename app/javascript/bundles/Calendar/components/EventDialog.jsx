@@ -6,7 +6,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import DialogActions from '@material-ui/core/DialogActions';
-import Axios from '../../../../../node_modules/axios';
+import { FacebookShareButton, FacebookIcon } from 'react-share'
 
 const actionButton = (props, event) => {
   if(props.user && event.attending) {
@@ -50,6 +50,9 @@ const EventDialog = props => {
         </DialogContentText>
       </DialogContent>
         <DialogActions>
+        <FacebookShareButton url={`http://google.com`}>
+          <FacebookIcon size={32} round={true} />
+        </FacebookShareButton>
         <Button onClick={props.handleClose} color="primary">
           Cancel
         </Button>
