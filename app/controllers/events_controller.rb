@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  
+
   def index
     respond_to do |format|
       format.html
@@ -42,7 +42,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.future.first(3)
+    @event = Event.find(params[:id])
   end
 
   private

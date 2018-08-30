@@ -20,9 +20,9 @@ class Calendar extends React.Component {
     currentMonth: new Date(),
     currentDate: new Date(),
     events: {},
-    eventDialogOpen: false,
+    eventDialogOpen: this.props.event !== undefined,
     formDialogOpen: false,
-    event: {
+    event: this.props.event || {
       title: '',
       description: '',
       start_at: new Date(),
@@ -239,7 +239,7 @@ class Calendar extends React.Component {
       })
   }
 
-  
+
   cancelRsvp = event => {
     const eventDate = dateFns.format(event.start_at, "YYYY-MM-DD");
     let { events } = this.state;
