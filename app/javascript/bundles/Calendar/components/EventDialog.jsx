@@ -19,7 +19,7 @@ const actionButton = (props, event) => {
 }
 
 const EventDialog = props => {
-  const { open, event } = props;
+  const { open, event, user } = props;
   const dateFormat = "MMMM Do";
   const timeFormat = "h:mm a";
 
@@ -68,13 +68,12 @@ const EventDialog = props => {
         <Button onClick={props.handleClose} color="primary">
           Cancel
         </Button>
-        { props.currentUser && props.currentUser.admin &&
-        <Button onClick={ () => { props.destroyEvent(event) } } color="secondary">
-          Delete
-        </Button>
+        { user && user.admin && user.id === event.user_id &&
+          <Button onClick={ () => { props.destroyEvent(event) } } color="secondary">
+            Delete
+          </Button>
         }
-        {actionButton(props, event)} 
-
+        { actionButton(props, event) }
       </DialogActions>
     </Dialog>
   );
