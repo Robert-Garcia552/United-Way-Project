@@ -3,11 +3,13 @@ import dateFns from 'date-fns';
 import DailyEvents from './DailyEvents';
 
 const Cell = props => {
-  const { day, monthStart, currentDate, events } = props;
+  const { day, monthStart, currentDate, events, currentUser } = props;
   const dateFormat = "D";
   const formattedDate = dateFns.format(day, dateFormat);
   const eventDateFormat = "YYYY-MM-DD";
   const eventFormattedDate = dateFns.format(day, eventDateFormat);
+  const cursor = currentUser && currentUser.admin ? 'pointer' : 'auto';
+  const style={cursor}
   return(
     <div
       className={`col cell ${
@@ -16,6 +18,7 @@ const Cell = props => {
           : dateFns.isSameDay(day, currentDate) ? "current" : ""
       }`}
       onClick={ () => { props.handleDateClick(day) }  }
+      style={style}
     >
       <DailyEvents dailyEvents={events[eventFormattedDate] || []} {...props} />
       <span className="number">{formattedDate}</span>
