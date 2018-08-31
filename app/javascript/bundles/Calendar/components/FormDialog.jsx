@@ -10,6 +10,7 @@ import dateFns from 'date-fns';
 import TimeInput from 'material-ui-time-picker';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
 const FormDialog = props => {
   const { event, createEvent, open } = props;
@@ -109,7 +110,33 @@ const FormDialog = props => {
               value={event.end_at}
               onChange={props.handleEndAtChange}
             />
-          </FormControl>
+          </FormControl>          
+          <Button component="span"> 
+            Image
+            <CloudUploadIcon  />
+            <input 
+              accept="image/*" 
+              type="file" 
+              style={{
+                opacity: 0,
+                position: 'absolute',
+                top: 0,
+                bottom: 0,
+                right: 0,
+                width: '100%'
+              }} 
+              onChange={props.handleImageChange}
+            />             
+          </Button> 
+          <TextField
+            margin="dense"
+            id="image"
+            label="Image"
+            type="text"
+            value={event.image.name}
+            fullWidth
+            disabled
+          />          
         </DialogContent>
         <DialogActions>
           <Button onClick={props.handleClose} color="primary">
