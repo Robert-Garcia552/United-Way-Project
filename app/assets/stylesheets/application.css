@@ -13,11 +13,17 @@
  *= require_tree .
  *= require_self
  */
- .full-width-carousel {
-   width: 100vw;
-   margin-left: -50vw;
-   left: 50%;
- }
+.full-width-carousel {
+ width: 100vw;
+ margin-left: -50vw;
+ left: 50%;
+}
+
+.give-an-hour {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 @media screen and (min-width: 1600px) {
     .container {
