@@ -134,7 +134,10 @@ class Calendar extends React.Component {
         state: '',
         zip:'',
         start_at: new Date(),
-        end_at: new Date()
+        end_at: new Date(),
+        image: {
+          name: ''
+        }
       }
     })
   }
@@ -152,6 +155,9 @@ class Calendar extends React.Component {
         zip:'',
         start_at: new Date(),
         end_at: new Date(),
+        image: {
+          name: ''
+        }
       }
     })
   }
@@ -254,7 +260,7 @@ class Calendar extends React.Component {
 
     let multiPartHeaders = JSON.parse(JSON.stringify(headers));
     multiPartHeaders['content-type'] = 'multipart/form-data';
-    
+
     axios.post(`/events.json`, formData, {headers: multiPartHeaders})
       .then((response) => {
         if(events[eventFormattedDate]){
@@ -278,8 +284,8 @@ class Calendar extends React.Component {
             zip:'',
             start_at: new Date(),
             end_at: new Date(),
-            image: { 
-              name: '' 
+            image: {
+              name: ''
             }
           }
         })
@@ -319,7 +325,7 @@ class Calendar extends React.Component {
         this.setState({events});
       })
   }
-  
+
   cancelRsvp = event => {
     const eventDate = dateFns.format(event.start_at, "YYYY-MM-DD");
     let { events } = this.state;
