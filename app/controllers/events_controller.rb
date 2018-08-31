@@ -11,15 +11,23 @@ class EventsController < ApplicationController
                       .between(start_date, end_date)
                       .ordered
                       .map do |event|
-                        image = event.image.variant.resize('100x100')
+                        begin
+                          image = event.image.variant(resize: '100x100')
+                          event.attributes.merge(
+                            "attending" => Rsvp.where(event: event, user: current_user).exists?,
+                            "image" => {
+                              "name" => image.send(:filename),
+                              "url" => url_for(image)
+                            }
+                          )
+                        rescue Module::DelegationError
+                          event.attributes.merge(
+                            "attending" => Rsvp.where(event: event, user: current_user).exists?,
+                            "image" => '')
 
-                        event.attributes.merge(
-                          "attending" => Rsvp.where(event: event, user: current_user).exists?,
-                          "image" => {
-                            "name" => image.send(:filename),
-                            "url" => url_for(image)
-                          }
-                        )
+                        end
+
+
                       end
                       .group_by do |event|
                         event["start_at"].to_date
@@ -50,13 +58,13 @@ class EventsController < ApplicationController
   def show
     event = Event.find(params[:id])
     image = event.image.variant(resize: '100x100')
-    
+
     @event = event.attributes.merge(
               "attending" => Rsvp.where(event: event, user: current_user).exists?,
               "image" => {
                 "name" => image.send(:filename),
                 "url" => url_for(image)
-              }      
+              }
             )
   end
 
