@@ -19,7 +19,7 @@
  left: 50%;
 }
 
-.give-an-hour {
+.justify-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
