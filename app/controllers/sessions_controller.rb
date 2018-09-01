@@ -6,11 +6,14 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(email: params[:email])
               .try(:authenticate, params[:password])
+    @permission = params[:permission]
 
     return render :new unless @user.present?
 
     login(@user) #comes from ApplicationController
-    remember @user #comes from ApplicationController
+      if @permission == "1"
+        remember(@user)
+      end #comes from ApplicationController
     redirect_to @user
   end
 
