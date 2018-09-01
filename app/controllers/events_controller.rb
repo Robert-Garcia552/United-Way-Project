@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  
+
   def index
     respond_to do |format|
       format.html
@@ -11,9 +11,23 @@ class EventsController < ApplicationController
                       .between(start_date, end_date)
                       .ordered
                       .map do |event|
-                        event.attributes.merge(
-                          "attending" => Rsvp.where(event: event, user: current_user).exists?
-                        )
+                        begin
+                          image = event.image.variant(resize: '100x100')
+                          event.attributes.merge(
+                            "attending" => Rsvp.where(event: event, user: current_user).exists?,
+                            "image" => {
+                              "name" => image.send(:filename),
+                              "url" => url_for(image)
+                            }
+                          )
+                        rescue Module::DelegationError
+                          event.attributes.merge(
+                            "attending" => Rsvp.where(event: event, user: current_user).exists?,
+                            "image" => '')
+
+                        end
+
+
                       end
                       .group_by do |event|
                         event["start_at"].to_date
@@ -42,13 +56,22 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.future.first(3)
+    event = Event.find(params[:id])
+    image = event.image.variant(resize: '100x100')
+
+    @event = event.attributes.merge(
+              "attending" => Rsvp.where(event: event, user: current_user).exists?,
+              "image" => {
+                "name" => image.send(:filename),
+                "url" => url_for(image)
+              }
+            )
   end
 
   private
 
   def event_params
-    params.require(:event).permit(:title, :description, :start_at, :end_at)
+    params.require(:event).permit(:title, :description, :start_at, :end_at, :location, :street_address, :city, :state, :zip, :image)
   end
 
 end

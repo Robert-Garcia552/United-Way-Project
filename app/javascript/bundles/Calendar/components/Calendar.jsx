@@ -20,14 +20,22 @@ class Calendar extends React.Component {
     currentMonth: new Date(),
     currentDate: new Date(),
     events: {},
-    eventDialogOpen: false,
+    eventDialogOpen: this.props.event !== undefined,
     formDialogOpen: false,
-    event: {
+    event: this.props.event || {
       title: '',
       description: '',
+      location: '',
+      street_address: '',
+      city: '',
+      state: '',
+      zip:'',
       start_at: new Date(),
       end_at: new Date(),
-      attending: false
+      attending: false,
+      image: {
+        name: ''
+      }
     }
   }
 
@@ -69,6 +77,7 @@ class Calendar extends React.Component {
             monthStart={monthStart}
             startDate={startDate}
             endDate={endDate}
+            currentUser={currentUser}
           />
         </div>
         <EventDialog
@@ -79,17 +88,26 @@ class Calendar extends React.Component {
           destroyEvent={this.destroyEvent}
           rsvpFor={this.rsvpFor}
           cancelRsvp={this.cancelRsvp}
+          currentUser={currentUser}
         />
-        <FormDialog
-          open={formDialogOpen}
-          event={event}
-          handleClose={this.handleFormDialogClose}
-          handleTitleChange={this.handleTitleChange}
-          handleDescriptionChange={this.handleDescriptionChange}
-          handleStartAtChange={this.handleStartAtChange}
-          handleEndAtChange={this.handleEndAtChange}
-          createEvent={this.createEvent}
-        />
+        { currentUser && currentUser.admin &&
+          <FormDialog
+            open={formDialogOpen}
+            event={event}
+            handleClose={this.handleFormDialogClose}
+            handleTitleChange={this.handleTitleChange}
+            handleDescriptionChange={this.handleDescriptionChange}
+            handleLocationChange={this.handleLocationChange}
+            handleStreetAddressChange={this.handleStreetAddressChange}
+            handleCityChange={this.handleCityChange}
+            handleStateChange={this.handleStateChange}
+            handleZipChange={this.handleZipChange}
+            handleStartAtChange={this.handleStartAtChange}
+            handleEndAtChange={this.handleEndAtChange}
+            createEvent={this.createEvent}
+            handleImageChange={this.handleImageChange}
+          />
+        }
       </div>
     );
   }
@@ -110,8 +128,16 @@ class Calendar extends React.Component {
       event: {
         title: '',
         description: '',
+        location: '',
+        street_address: '',
+        city: '',
+        state: '',
+        zip:'',
         start_at: new Date(),
-        end_at: new Date()
+        end_at: new Date(),
+        image: {
+          name: ''
+        }
       }
     })
   }
@@ -122,8 +148,16 @@ class Calendar extends React.Component {
       event: {
         title: '',
         description: '',
+        location: '',
+        street_address: '',
+        city: '',
+        state: '',
+        zip:'',
         start_at: new Date(),
-        end_at: new Date()
+        end_at: new Date(),
+        image: {
+          name: ''
+        }
       }
     })
   }
@@ -178,11 +212,56 @@ class Calendar extends React.Component {
     this.setState({ event });
   }
 
+  handleLocationChange = clickEvent => {
+    let { event } = this.state;
+    event.location = clickEvent.target.value;
+    this.setState({ event });
+  }
+
+  handleStreetAddressChange = clickEvent => {
+    let { event } = this.state;
+    event.street_address = clickEvent.target.value;
+    this.setState({ event });
+  }
+
+  handleCityChange = clickEvent => {
+    let { event } = this.state;
+    event.city = clickEvent.target.value;
+    this.setState({ event });
+  }
+  handleStateChange = clickEvent => {
+    let { event } = this.state;
+    event.state = clickEvent.target.value;
+    this.setState({ event });
+  }
+
+  handleZipChange = clickEvent => {
+    let { event } = this.state;
+    event.zip = clickEvent.target.value;
+    this.setState({ event });
+  }
+
+  handleImageChange = changeEvent => {
+    changeEvent.preventDefault();
+    let file = changeEvent.target.files[0];
+    let { event } = this.state;
+    event.image = file;
+    this.setState({ event });
+  }
+
   createEvent = event => {
     const eventDateFormat = "YYYY-MM-DD";
     const eventFormattedDate = dateFns.format(event.start_at, eventDateFormat);
     let { events } = this.state;
-    axios.post(`/events.json`, event, {headers: headers})
+
+    let formData = new FormData();
+
+    for(var prop in event ){ formData.append(`event[${prop}]`, event[prop]) }
+
+    let multiPartHeaders = JSON.parse(JSON.stringify(headers));
+    multiPartHeaders['content-type'] = 'multipart/form-data';
+
+    axios.post(`/events.json`, formData, {headers: multiPartHeaders})
       .then((response) => {
         if(events[eventFormattedDate]){
           events[eventFormattedDate].push(response.data);
@@ -198,8 +277,16 @@ class Calendar extends React.Component {
           event: {
             title: '',
             description: '',
+            location: '',
+            street_address: '',
+            city: '',
+            state: '',
+            zip:'',
             start_at: new Date(),
-            end_at: new Date()
+            end_at: new Date(),
+            image: {
+              name: ''
+            }
           }
         })
       })
@@ -239,7 +326,6 @@ class Calendar extends React.Component {
       })
   }
 
-  
   cancelRsvp = event => {
     const eventDate = dateFns.format(event.start_at, "YYYY-MM-DD");
     let { events } = this.state;
@@ -254,8 +340,6 @@ class Calendar extends React.Component {
         this.setState({events});
       })
     }
-
-
 
   resetMonth = month => {
     const { formattedStartDate, formattedEndDate } = this.getMonthConsts(month);

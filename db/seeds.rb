@@ -398,6 +398,18 @@ DATA = {
   ]
 }
 
+admin = User.create!(
+          email: "admin@admin.com",
+          password: "password",
+          password_confirmation: "password",
+          admin: true,
+          first_name: "Admin",
+          last_name: "Admin",
+          birthdate: 25.years.ago.to_date,
+          phone_number: "1234567890"
+        )
+
+
 DATA[:calendarEvents].each do |event|
-  p Event.create!(event[:details][0])
+  admin.events.create!(event[:details][0])
 end
