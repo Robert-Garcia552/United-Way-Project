@@ -19,15 +19,26 @@ Merit.setup do |config|
   # config.current_user_method = 'current_user'
 end
 
-# Create application badges (uses https://github.com/norman/ambry)
-# badge_id = 0
-# [{
-#   id: (badge_id = badge_id+1),
-#   name: 'just-registered'
-# }, {
-#   id: (badge_id = badge_id+1),
-#   name: 'best-unicorn',
-#   custom_fields: { category: 'fantasy' }
-# }].each do |attrs|
-#   Merit::Badge.create! attrs
-# end
+Merit::Badge.create!(
+  id: 1,
+  name: "user-created",
+  description: "User created"
+)
+
+Merit::Badge.create!(
+  id: 2,
+  name: "first-rsvp",
+  description: "First event RSVP"
+)
+
+Merit::Badge.create!(
+  id: 3,
+  name: "five-rsvps",
+  description: "Five events RSVP'd"
+)
+
+Merit::Badge.create!(
+  id: 4,
+  name: "ten-rsvps",
+  description: "Ten event RSVP'd"
+)
