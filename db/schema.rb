@@ -78,10 +78,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_195722) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.boolean "admin", default: false
-<<<<<<< HEAD
     t.string "remember_digest"
-=======
->>>>>>> 73fb4684b7c0553f0d6bf7be083d9be88b640a25
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
