@@ -261,7 +261,7 @@ class Calendar extends React.Component {
     let multiPartHeaders = JSON.parse(JSON.stringify(headers));
     multiPartHeaders['content-type'] = 'multipart/form-data';
 
-    axios.post(`/events.json`, formData, {headers: multiPartHeaders})
+    axios.post(`/events`, formData, {headers: multiPartHeaders})
       .then((response) => {
         if(events[eventFormattedDate]){
           events[eventFormattedDate].push(response.data);
