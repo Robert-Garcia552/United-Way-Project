@@ -22,23 +22,27 @@ end
 Merit::Badge.create!(
   id: 1,
   name: "user-created",
-  description: "User created"
+  description: "User created",
+  custom_fields: { image: "demo_society2.gif" }
 )
 
 Merit::Badge.create!(
   id: 2,
   name: "first-rsvp",
-  description: "First event RSVP"
+  description: "First event RSVP",
+  custom_fields: { image: "demo_society2.gif" }
 )
 
 Merit::Badge.create!(
   id: 3,
   name: "five-rsvps",
-  description: "Five events RSVP'd"
+  description: "Five events RSVP'd",
+  custom_fields: { image: "demo_society2.gif" }
 )
 
 Merit::Badge.create!(
   id: 4,
   name: "ten-rsvps",
-  description: "Ten event RSVP'd"
+  description: "Ten event RSVP'd",
+  custom_fields: { image: "demo_society2.gif" }
 )
