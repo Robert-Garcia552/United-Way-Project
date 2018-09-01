@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
               .try(:authenticate, params[:password])
     return render :new unless @user.present?
     login(@user) #comes from ApplicationController
+    remember(@user) #comes from ApplicationController
     redirect_to @user
   end
 
