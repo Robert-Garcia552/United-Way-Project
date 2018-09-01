@@ -4,12 +4,12 @@ class ApplicationController < ActionController::Base
   add_flash_types :danger, :info, :warning, :success
 
   def current_user
-    if user_id = session[:user_id]
+    if (user_id = session[:user_id])
       @current_user ||= User.find_by(id: user_id)
-    elsif user_id = cookies.signed[:user_id]
+    elsif (user_id = cookies.signed[:user_id])
       user = User.find_by(id: user_id)
       if user && user.authenticated?(cookies[:remember_token])
-        login(user)
+        login user
         @current_user = user
       end
     end
@@ -27,12 +27,10 @@ class ApplicationController < ActionController::Base
     cookies.permanent[:remember_token] = user.remember_token
   end
 
-  private
+   private
 
-  def login(user)
-    session[:user_id] = user.id
-  end
-
-
+    def login(user)
+       session[:user_id] = user.id
+    end
 
 end

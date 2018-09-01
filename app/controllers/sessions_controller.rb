@@ -15,7 +15,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    current_user.forget
     session[:user_id] = nil
+    cookies.delete :remember_token
+    cookies.delete :user_id
     redirect_to root_path, success: "You have successfully logged out."
   end
 
