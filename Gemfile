@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'merit'
 gem "mini_magick"
 gem "aws-sdk-s3", require: false
 gem 'pry'
@@ -73,5 +74,3 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'sidekiq'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'aws-sdk', '~> 3'
-
-
