@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_merit
+
     validates :first_name, :last_name, :birthdate, :email, :phone_number, presence: true
     validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
     validates_length_of :phone_number, in: 10..13
