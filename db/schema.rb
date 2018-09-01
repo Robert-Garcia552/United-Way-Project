@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_01_165514) do
+ActiveRecord::Schema.define(version: 2018_09_01_164101) do
+ActiveRecord::Schema.define(version: 2018_08_30_195722) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -124,9 +125,11 @@ ActiveRecord::Schema.define(version: 2018_09_01_165514) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.boolean "admin", default: false
+    t.string "remember_digest"
     t.integer "sash_id"
     t.integer "level", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+end
 end
