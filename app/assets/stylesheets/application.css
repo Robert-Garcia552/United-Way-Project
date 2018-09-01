@@ -13,17 +13,132 @@
  *= require_tree .
  *= require_self
  */
+
+/* COLORS
+Dark Blue - #000064
+Deep Red - #b41428
+Light Beige - #f0e6c8
+Dark Beige - #e6d7aa
+Light Grey - #969696
+United Way Blue - #10167f
+United Way "Red" - #fe23oa
+United Way Orange - #ff9600
+*/
+
+
+ /* Carousel */
 .full-width-carousel {
  width: 100vw;
  margin-left: -50vw;
  left: 50%;
 }
 
+.round-img {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  max-width: 190px;
+  width: 100%;
+  font-size: 16px;
+  box-shadow: none !important;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.round-img *,
+.round-img:before,
+.round-img:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.round-img:before,
+.round-img:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 50%;
+  content: '';
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: -1;
+  border: 2px solid #bbb;
+  border-color: transparent #bbb;
+}
+
+.round-img img {
+  max-width: 100%;
+  backface-visibility: hidden;
+  vertical-align: top;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.round-img figcaption {
+  position: absolute;
+  display: block;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  opacity: 0;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.round-img:hover figcaption,
+.round-img.hover figcaption {
+  opacity: 1;
+  text-transform: uppercase;
+  color: white;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.round-img:hover:before,
+.round-img.hover:before,
+.round-img:hover:after,
+.round-img.hover:after {
+  border-width: 10px;
+}
+
+.round-img:hover:before,
+.round-img.hover:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.round-img:hover:after,
+.round-img.hover:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/* Home Page Div Collection */
 .justify-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
+
+/* Round Image Div About Us Page */
+#aboutUsRoundRow {
+  background-color: #10167f;
+  text-align: center;
+}
+
+#youTubeAboutUs {
+  text-align: center;
+  background-color: black;
+}
+
+
+
 
 @media screen and (min-width: 1600px) {
     .container {
