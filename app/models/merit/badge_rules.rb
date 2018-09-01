@@ -21,29 +21,23 @@ module Merit
     include Merit::BadgeRulesMethods
 
     def initialize
-      # If it creates user, grant badge
-      # Should be "current_user" after registration for badge to be granted.
-      # Find badge by badge_id, badge_id takes presidence over badge
-      # grant_on 'users#create', badge_id: 7, badge: 'just-registered', to: :itself
+      #User created, gets badge
+      grant_on 'users#create', badge: 'user-created', to: :itself
 
-      # If it has 10 comments, grant commenter-10 badge
-      # grant_on 'comments#create', badge: 'commenter', level: 10 do |comment|
-      #   comment.user.comments.count == 10
-      # end
+      #First RSVP
+      grant_on 'rsvps#create', badge: 'first-rsvp', to: :user do |rsvp|
+        rsvp.user.rsvps.count >= 0
+      end
 
-      # If it has 5 votes, grant relevant-commenter badge
-      # grant_on 'comments#vote', badge: 'relevant-commenter',
-      #   to: :user do |comment|
-      #
-      #   comment.votes.count == 5
-      # end
+      #Five RSVPs
+      grant_on 'rsvps#create', badge: 'five-rsvps', to: :user do |rsvp|
+        rsvp.user.rsvps.count == 5
+      end
 
-      # Changes his name by one wider than 4 chars (arbitrary ruby code case)
-      # grant_on 'registrations#update', badge: 'autobiographer',
-      #   temporary: true, model_name: 'User' do |user|
-      #
-      #   user.name.length > 4
-      # end
+      #Ten RSVPs
+      grant_on 'rsvps#create', badge: 'ten-rsvps', to: :user do |rsvp|
+        rsvp.user.rsvps.count == 10
+      end
     end
   end
 end
