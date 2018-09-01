@@ -2,8 +2,8 @@ class RsvpsController < ApplicationController
   before_action :set_event
 
   def create
-    rsvp = current_user.rsvps.find_or_create_by(event: @event)
-    render json: rsvp
+    @rsvp = current_user.rsvps.find_or_create_by(event: @event)
+    render json: @rsvp
   end
 
   def destroy
