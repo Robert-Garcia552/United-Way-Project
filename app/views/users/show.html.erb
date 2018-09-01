@@ -21,8 +21,7 @@
         <div class="row">
           <ul>
             <% current_user.badges.each do |badge| %>
-              <%#= badge.inspect %>
-              <%= image_tag badge.custom_fields[:image], :alt => badge.description, :float => "left" %>
+              <%= image_tag badge.custom_fields[:image], :alt => badge.description, :float => "left", :height =>"100" %>
             <% end %>
           </ul>
         </div>
