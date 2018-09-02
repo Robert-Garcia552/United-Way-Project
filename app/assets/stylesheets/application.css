@@ -137,7 +137,9 @@ United Way Orange - #ff9600
   background-color: black;
 }
 
-
+.page-footer {
+  font-size: .75rem;
+}
 
 
 @media screen and (min-width: 1600px) {
