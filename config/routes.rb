@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  default_url_options :host => "localhost:3000"
   get 'password_resets/new'
   get 'password_resets/edit'
   require 'sidekiq/web'
