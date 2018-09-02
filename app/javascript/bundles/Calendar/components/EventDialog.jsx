@@ -47,6 +47,7 @@ const EventDialog = props => {
           {' '}{ event.zip }<br></br>
           <b>Start: </b>{ dateFns.format(event.start_at, timeFormat) }<br></br>
           <b>End: </b>{ dateFns.format(event.end_at, timeFormat) }<br></br>
+          <img src={event.image.url} />
         </DialogContentText>
       </DialogContent>
         <DialogActions>

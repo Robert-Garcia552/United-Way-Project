@@ -32,7 +32,10 @@ class Calendar extends React.Component {
       zip:'',
       start_at: new Date(),
       end_at: new Date(),
-      attending: false
+      attending: false,
+      image: {
+        name: ''
+      }
     }
   }
 
@@ -102,6 +105,7 @@ class Calendar extends React.Component {
             handleStartAtChange={this.handleStartAtChange}
             handleEndAtChange={this.handleEndAtChange}
             createEvent={this.createEvent}
+            handleImageChange={this.handleImageChange}
           />
         }
       </div>
@@ -130,7 +134,10 @@ class Calendar extends React.Component {
         state: '',
         zip:'',
         start_at: new Date(),
-        end_at: new Date()
+        end_at: new Date(),
+        image: {
+          name: ''
+        }
       }
     })
   }
@@ -148,6 +155,9 @@ class Calendar extends React.Component {
         zip:'',
         start_at: new Date(),
         end_at: new Date(),
+        image: {
+          name: ''
+        }
       }
     })
   }
@@ -231,11 +241,27 @@ class Calendar extends React.Component {
     this.setState({ event });
   }
 
+  handleImageChange = changeEvent => {
+    changeEvent.preventDefault();
+    let file = changeEvent.target.files[0];
+    let { event } = this.state;
+    event.image = file;
+    this.setState({ event });
+  }
+
   createEvent = event => {
     const eventDateFormat = "YYYY-MM-DD";
     const eventFormattedDate = dateFns.format(event.start_at, eventDateFormat);
     let { events } = this.state;
-    axios.post(`/events.json`, event, {headers: headers})
+
+    let formData = new FormData();
+
+    for(var prop in event ){ formData.append(`event[${prop}]`, event[prop]) }
+
+    let multiPartHeaders = JSON.parse(JSON.stringify(headers));
+    multiPartHeaders['content-type'] = 'multipart/form-data';
+
+    axios.post(`/events`, formData, {headers: multiPartHeaders})
       .then((response) => {
         if(events[eventFormattedDate]){
           events[eventFormattedDate].push(response.data);
@@ -257,7 +283,10 @@ class Calendar extends React.Component {
             state: '',
             zip:'',
             start_at: new Date(),
-            end_at: new Date()
+            end_at: new Date(),
+            image: {
+              name: ''
+            }
           }
         })
       })
@@ -296,7 +325,7 @@ class Calendar extends React.Component {
         this.setState({events});
       })
   }
-  
+
   cancelRsvp = event => {
     const eventDate = dateFns.format(event.start_at, "YYYY-MM-DD");
     let { events } = this.state;

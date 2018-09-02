@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  default_url_options :host => "localhost:3000"
+  get 'password_resets/new'
+  get 'password_resets/edit'
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
   
@@ -7,6 +10,8 @@ Rails.application.routes.draw do
   resources :events do
     resource :rsvps, only: [:create, :destroy]
   end
+  resources :password_resets, only: [:new, :create, :edit, :update]
+
 
   root 'home#index'
 
