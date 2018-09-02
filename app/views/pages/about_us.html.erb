@@ -6,18 +6,14 @@
   </head>
   <body>
 
-  <div class="container">
-    <div class="pt-4 pb-4 text-white" style="background: #b41428">
+  <div class="container-fluid p-0
+">
+    <div>
       <h1>About Us</h1>
     </div>
 
-    <div id="youTubeAboutUs">
-      <!--YouTube Video -->
-      <iframe width="660" height="415" src="https://www.youtube.com/embed/DMNCtsMhiLo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-
-    <div style="background: #b41428">
-      <div class="text-center">
+    <div class="p-4 text-white" style="background: #b41428">
+      <div class="text-center pl-2 pr-2">
         <h2>Who We Are</h2>
       </div>
       We are on a mission to build a stronger Miami — a Miami where all
@@ -26,7 +22,12 @@
       With you by our side, we know we can make this vision a reality. We invite you to join us in this life-changing work.
     </div>
 
-    <div class="row ml-0" style="background: #b41428">
+    <section class="text-center" style="background: black">
+      <!--YouTube Video -->
+      <iframe width="760" height="515" src="https://www.youtube.com/embed/DMNCtsMhiLo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <div class="row p-4">
       <div class="col-lg-6">
         <div class="text-center">
           <h2>Mission</h2>
@@ -42,19 +43,19 @@
     </div>
 
 
-        <section id="aboutUsRoundRow">
+        <section id="aboutUsRoundRow" class="m-0" style="background: #b41428">
            <figure class="round-img">
             <%= image_tag "home/calendar.jpg" %>
             <figcaption><%= link_to 'Register for an Event', events_path %></figcaption>
           </figure>
           <figure class="round-img">
-            <%= image_tag "home/calendar.jpg" %>
+            <%= image_tag "home/give-back.png" %>
             <figcaption>
               <a href="https://unitedwaymiami.org/get-involved/give-to-your-united-way/start-a-campaign-at-your-workplace/campaigntoolkit/" target="_blank">Start A Campaign</a>
             </figcaption>
           </figure>
           <figure class="round-img">
-            <%= image_tag "home/calendar.jpg" %>
+            <%= image_tag "home/uw-history.jpg" %>
             <figcaption>
               <a href="https://unitedwaymiami.org/about-united-way-of-miami-dade/more-than-90-years-of-building-a-stronger-miami/" target="_blank">Our History</a>
             </figcaption>
@@ -66,16 +67,6 @@
             </figcaption>
           </figure>
         </section>
-
-<div style="background: #b41428">
-  <div class="text-center">
-    <h2>BUILDING A STRONGER MIAMI THROUGH EDUCATION, FINANCIAL STABILITY AND HEALTH</h2>
-    <p>In today’s complex world, there’s no one way or right way to tackle the challenges we face. Instead, it takes all of us working collectively, in all kinds of different ways, to get the job done. Through research and planning, community engagement, investments in programs and initiatives, public policy advocacy and public awareness activities, we are creating real and measurable changes in education, financial stability and health.</p>
-  </div>
-</div>
-
-
-
 
   </body>
 </html>
