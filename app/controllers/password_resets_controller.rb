@@ -42,9 +42,8 @@ class PasswordResetsController < ApplicationController
     @user = User.find_by(email: params[:email])
   end
 
-  # might be a security risk
   def valid_user
-    unless (@user(:reset, params[:id]))
+    unless (@user && @user.authenticated?(:reset, params[:id]))
       redirect_to root_path
     end
   end
