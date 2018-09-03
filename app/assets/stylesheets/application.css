@@ -14,6 +14,9 @@
  *= require_self
  */
 
+ @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
 /* COLORS
 Dark Blue - #000064
 Deep Red - #b41428
@@ -25,6 +28,9 @@ United Way Red - #fe23oa
 United Way Orange - #ff9600
 */
 
+.body {
+  font-family: 'Roboto', sans-serif;
+}
 
  /* Carousel */
 .full-width-carousel {
