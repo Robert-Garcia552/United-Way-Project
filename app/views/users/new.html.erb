@@ -1,6 +1,6 @@
-<div class= 'form-group'>
-<h1>Sign up</h1>
-<%= form_for @user do |f| %>
+<div class= 'form-group p-4'>
+  <h1>Sign up</h1>
+  <%= form_for @user do |f| %>
     <p>
         <span>* required field:</span></br>
         <%= f.label :suffix %></br>
@@ -57,5 +57,5 @@
         <%= f.submit :Submit, class: 'btn btn-primary' %>
     </p>
 
-    <% end %>
-    </div>
+  <% end %>
+</div>

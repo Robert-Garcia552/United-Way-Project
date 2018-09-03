@@ -5,7 +5,7 @@ const Header = props => {
   const dateFormat = "MMMM YYYY";
 
   return(
-    <div className="header row flex-middle">
+    <div className="header row flex-middle m-0">
       <div className="col col-start">
         <div className="icon" onClick={props.prevMonth}>
           chevron_left
