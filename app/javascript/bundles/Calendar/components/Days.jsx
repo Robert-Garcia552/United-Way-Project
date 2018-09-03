@@ -13,7 +13,7 @@ const Days = props => {
     );
   }
   return(
-    <div className="days row">{days}</div>
+    <div className="days row m-0">{days}</div>
   );
 }
 

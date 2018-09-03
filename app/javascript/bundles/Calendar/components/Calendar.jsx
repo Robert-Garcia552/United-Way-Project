@@ -296,19 +296,19 @@ class Calendar extends React.Component {
     const eventDateFormat = "YYYY-MM-DD";
     const eventFormattedDate = dateFns.format(event.start_at, eventDateFormat);
     let { events } = this.state;
-    axios.delete(`/events/${event.id}.json`, {headers: headers})
-      .then((response) => {
-        events[eventFormattedDate] = events[eventFormattedDate].filter((e) => {
-          return e.id !== event.id
+      axios.delete(`/events/${event.id}.json`, {headers: headers})
+        .then((response) => {
+          events[eventFormattedDate] = events[eventFormattedDate].filter((e) => {
+            return e.id !== event.id
+          })
+          this.setState({
+            events,
+            eventDialogOpen: false
+          })
         })
-        this.setState({
-          events,
-          eventDialogOpen: false
+        .catch((error) => {
+          console.log(error.response)
         })
-      })
-      .catch((error) => {
-        console.log(error.response)
-      })
   }
 
   rsvpFor = event => {

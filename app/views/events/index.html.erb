@@ -1,6 +1,8 @@
-<br>
-<%= react_component 'Calendar', 
-    props: {
-        currentUser:  current_user&.attributes&.except("password_digest")
-    } 
-%>
+<div class="p-4">
+  <br>
+  <%= react_component 'Calendar',
+      props: {
+          currentUser:  current_user&.attributes&.except("password_digest")
+      }
+  %>
+</div>

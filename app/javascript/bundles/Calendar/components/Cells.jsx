@@ -13,7 +13,7 @@ const Cells = props => {
       days.push(<Cell key={day} day={cloneDay} {...props} />);
       day = dateFns.addDays(day, 1);
     }
-    rows.push(<div className="row" key={day}>{days}</div>);
+    rows.push(<div className="row m-0" key={day}>{days}</div>);
     days = [];
   }
   return(
