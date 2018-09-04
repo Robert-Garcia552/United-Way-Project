@@ -25,7 +25,7 @@ const FormDialog = props => {
           <TextField
             margin="dense"
             id="title"
-            label="Title"
+            label=" * Title"
             type="text"
             value={event.title}
             onChange={props.handleTitleChange}
@@ -34,7 +34,7 @@ const FormDialog = props => {
           <TextField
             margin="dense"
             id="description"
-            label="Description"
+            label=" * Description"
             type="text"
             value={event.description}
             onChange={props.handleDescriptionChange}
@@ -43,7 +43,7 @@ const FormDialog = props => {
           <TextField
             margin="dense"
             id="location"
-            label="Location"
+            label=" * Location"
             type="text"
             value={event.location}
             onChange={props.handleLocationChange}
@@ -52,7 +52,7 @@ const FormDialog = props => {
           <TextField
             margin="dense"
             id="street_address"
-            label="Street Address"
+            label=" * Street Address"
             type="text"
             value={event.street_address}
             onChange={props.handleStreetAddressChange}
@@ -61,7 +61,7 @@ const FormDialog = props => {
           <TextField
             margin="dense"
             id="city"
-            label="City"
+            label=" * City"
             type="text"
             value={event.city}
             onChange={props.handleCityChange}
@@ -70,7 +70,7 @@ const FormDialog = props => {
           <TextField
             margin="dense"
             id="state"
-            label="State"
+            label=" * State"
             type="text"
             value={event.state}
             onChange={props.handleStateChange}
@@ -79,7 +79,7 @@ const FormDialog = props => {
           <TextField
             margin="dense"
             id="zip"
-            label="Zip Code"
+            label=" * Zip Code"
             type="text"
             value={event.zip}
             onChange={props.handleZipChange}
@@ -89,7 +89,7 @@ const FormDialog = props => {
             fullWidth
             margin="dense"
           >
-            <InputLabel htmlFor="start_at">Start</InputLabel>
+            <InputLabel htmlFor="start_at"> * Start</InputLabel>
             <TimeInput
               id="start_at"
               name="start_at"
@@ -102,7 +102,7 @@ const FormDialog = props => {
             fullWidth
             margin="dense"
           >
-            <InputLabel htmlFor="end_at">End</InputLabel>
+            <InputLabel htmlFor="end_at"> * End</InputLabel>
             <TimeInput
               id="end_at"
               name="end_at"
@@ -112,7 +112,7 @@ const FormDialog = props => {
             />
           </FormControl>          
           <Button component="span"> 
-            Image
+            * Image
             <CloudUploadIcon  />
             <input 
               accept="image/*" 

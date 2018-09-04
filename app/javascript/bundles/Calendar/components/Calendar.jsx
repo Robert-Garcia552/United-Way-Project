@@ -290,6 +290,10 @@ class Calendar extends React.Component {
           }
         })
       })
+      .catch((error) => {
+        console.log(error.response)
+        alert("Please check required fields.");
+      })
   }
 
   destroyEvent = event => {

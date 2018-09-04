@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
+  validates :title, :description, :start_at, :end_at, :location, :street_address, :city, :state, :zip, :image, presence: true
   belongs_to :user, optional: true
-  validates :title, :description, :start_at, :end_at, :date, :location, :street_address, :city, :state, :zip
   has_many :rsvps
   has_one_attached :image
 
