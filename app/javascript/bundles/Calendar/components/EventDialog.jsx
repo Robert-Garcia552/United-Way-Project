@@ -51,19 +51,19 @@ const EventDialog = props => {
         </DialogContentText>
       </DialogContent>
         <DialogActions>
-        <FacebookShareButton url={`http://google.com`}>
+        <FacebookShareButton url={`http://events/${event.id}`}>
           <FacebookIcon size={32} round={true} />
         </FacebookShareButton>
-        <TwitterShareButton url={`http://google.com`}>
+        <TwitterShareButton url={`http://events/${event.id}`}>
           <TwitterIcon size={32} round={true} />
         </TwitterShareButton>
-        <LinkedinShareButton url={`http://google.com`}>
+        <LinkedinShareButton url={`http://events/${event.id}`}>
           <LinkedinIcon size={32} round={true} />
         </LinkedinShareButton>
-        <GooglePlusShareButton url={`http://google.com`}>
+        <GooglePlusShareButton url={`http://events/${event.id}`}>
           <GooglePlusIcon size={32} round={true} />
         </GooglePlusShareButton>
-        <EmailShareButton url={`http://google.com`}>
+        <EmailShareButton url={`http://events/${event.id}`}>
           <EmailIcon size={32} round={true} />
         </EmailShareButton>
         <Button onClick={props.handleClose} color="primary">
