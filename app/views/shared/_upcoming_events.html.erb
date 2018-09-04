@@ -3,12 +3,18 @@
     <% events.in_groups_of(3, Event.new) do |group| %>
         <div class="row m-0">
             <% group.each do |event| %>
+            <div>
+                <% if event.image.attached? %>
+                    <%= image_tag rails_blob_url(event.image)  %>
+                <% else %>
+                    <%= image_tag "home/UW-event.png" %>
+                <% end %> 
+            </div>
                 <div class="col-sm">
-                    <%= image_tag "home/UW-music.png", class: ["d-block", "w-100"]%>
                     <b><%= link_to event.title, event %></b>
                 </div>
-            <% end %>
+            <% end %> <!-- end event do -->
         </div>
-    <% end %>
+    <% end %> <!-- end group do -->
     <%= link_to "All Events", events_path, class:"btn btn-default" %>
 </div>

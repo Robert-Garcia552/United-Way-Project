@@ -312,7 +312,7 @@ DATA = {
                   date: "",
                   start_at: "2018-09-15 09:00:00 EDT",
                   end_at: "2018-09-15 12:00:00 EDT",
-                  location: "",
+                  location: "hello",
                   street_address: "701 Northeast 151 Street",
                   city: "North Miami Beach",
                   state: "FL",
@@ -329,7 +329,7 @@ DATA = {
                   description: "Food for Life Network, Inc., a program through Care Resource, is committed to delivering services with compassion and confidentiality, to fostering clients’ dignity and independence, and to enhancing clients’ quality of life. Clients are never charged for services. Instead, Care Resource depend on grants and donations from socially responsible individuals, groups, businesses and organizations within and beyond the local community.​
 
                   Volunteers are needed in the food bank to pack groceries for pickup and meals for delivery, sort and shelve donations, in addition to other food bank tasks as needed.",
-                  date: "",
+                  date: "2018-09-27 09:00:00 EDT",
                   start_at: "2018-09-19 09:00:00 EDT",
                   end_at: "2018-09-18 12:00:00 EDT",
                   location: "Food for Life Network",
@@ -347,14 +347,14 @@ DATA = {
                 {
                   title: "Lotus Village Volunteer Opportunities",
                   description: "They have a new state-of-the-art facility and they are looking for volunteers that can come with activities or ideas. Lotus Village relies on volunteers to create and lead activities for the women, children, and together (including mommy & me)! If you have knowledge or passion about art, meditation, Zumba, knitting, make-up, manicures, (to name a few), Lotus Village is especially (but not only) looking for volunteers to commit 1+ hours a week.",
-                  date: "" ,
+                  date: "2018-09-27 09:00:00 EDT" ,
                   start_at: "2018-09-21 09:00:00 EDT",
                   end_at: "2018-09-21 12:00:00 EDT",
-                  location: "",
-                  street_address: "",
+                  location: "hello",
+                  street_address: "hilo",
                   city: "Miami",
                   state: "FL",
-                  zip: ""
+                  zip: "wow"
                 },
 
               ]
@@ -365,14 +365,14 @@ DATA = {
                 {
                   title: "Red Cross",
                   description: "The Red Cross is looking for volunteers to cover their reception desk and answer phones. If you have any questions, please call Sylvia J. Taylor at (954) 895-8935.",
-                  date: "",
+                  date: "2018-09-27 09:00:00 EDT",
                   start_at: "2018-09-24 09:00:00 EDT",
                   end_at: "2018-09-24 12:00:00 EDT",
-                  location: "",
-                  street_address: "",
+                  location: "hi",
+                  street_address: "hello",
                   city: "Miami",
                   state: "FL",
-                  zip: ""
+                  zip: "wow"
                 },
 
               ]
@@ -383,7 +383,7 @@ DATA = {
                 {
                   title: "Southwest Social Services Badia Senior Center",
                   description: "Southwest Social Services Programs, Inc. has been serving senior citizens throughout Miami-Dade County since 1981. The services they offer include home-delivered meals, congregate meals in senior centers, screening and assessment, nutrition education, recreational activities, education, and transportation. Southwest Social services is looking for volunteers throughout the week to help with arts & crafts, English classes, recreational activities and computer classes for seniors.",
-                  date: "" ,
+                  date: "2018-09-27 09:00:00 EDT" ,
                   start_at: "2018-09-27 09:00:00 EDT",
                   end_at: "2018-09-27 12:00:00 EDT",
                   location: "Badia Senior Center (Main)",
@@ -399,7 +399,7 @@ DATA = {
 }
 
 admin = User.create!(
-          email: "admin@admin.com",
+          email: "admin@gmail.com",
           password: "password",
           password_confirmation: "password",
           admin: true,
