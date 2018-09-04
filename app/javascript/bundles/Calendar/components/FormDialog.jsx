@@ -21,6 +21,7 @@ const FormDialog = props => {
         onClose={props.handleClose}
       >
         <DialogTitle>New Event for {dateFns.format(event.start_at, "MMMM Do")}</DialogTitle>
+        <DialogContent> * required field</DialogContent>
         <DialogContent>
           <TextField
             margin="dense"
