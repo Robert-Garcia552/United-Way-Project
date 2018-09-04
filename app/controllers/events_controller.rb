@@ -57,7 +57,7 @@ class EventsController < ApplicationController
 
   def show
     event = Event.find(params[:id])
-    @image = event.image.try(:variant, resize: '100x100')
+    image = event.image.try(:variant, resize: '100x100')
 
     @event = event.attributes.merge(
               "attending" => Rsvp.where(event: event, user: current_user).exists?,
