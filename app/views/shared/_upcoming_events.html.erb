@@ -4,8 +4,10 @@
         <div class="row m-0">
             <% group.each do |event| %>
                 <div class="col-sm">
-                    <%= image_tag "home/UW-music.png", class: ["d-block", "w-100"]%>
-                    <b><%= link_to event.title, event %></b>
+                  <% if event.image %>
+                    <%= image_tag rails_blob_url(event.image)  %>
+                  <% end %>
+                  <b><%= link_to event.title, event %></b>
                 </div>
             <% end %>
         </div>
