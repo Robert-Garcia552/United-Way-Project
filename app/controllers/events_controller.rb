@@ -45,7 +45,7 @@ class EventsController < ApplicationController
     if event.save
       render json: event
     else
-      render json: event.error.full_messages, status: :unprocessable_entity
+      render json: event.errors.full_messages, status: :unprocessable_entity
     end
   end
 
