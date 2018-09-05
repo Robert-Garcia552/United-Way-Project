@@ -6,6 +6,7 @@ import Days from './Days';
 import Cells from './Cells';
 import EventDialog from './EventDialog';
 import FormDialog from './FormDialog';
+import ErrorBoundary from './ErrorBoundary';
 
 const token = document.querySelector('meta[name="csrf-token"]')
                 .getAttribute('content');
@@ -80,6 +81,7 @@ class Calendar extends React.Component {
             currentUser={currentUser}
           />
         </div>
+        <ErrorBoundary>
         <EventDialog
           open={eventDialogOpen}
           event={event}
@@ -90,7 +92,9 @@ class Calendar extends React.Component {
           cancelRsvp={this.cancelRsvp}
           currentUser={currentUser}
         />
+        </ErrorBoundary>
         { currentUser && currentUser.admin &&
+          <ErrorBoundary>
           <FormDialog
             open={formDialogOpen}
             event={event}
@@ -107,6 +111,7 @@ class Calendar extends React.Component {
             createEvent={this.createEvent}
             handleImageChange={this.handleImageChange}
           />
+          </ErrorBoundary>
         }
       </div>
     );
