@@ -1,6 +1,6 @@
 <div>
     <div class="container-events ml-0 text-center">
-      <h2><%= title  %> Events</h2>
+      <h2 class="serif-font"><%= title  %> Events</h2>
       <% events.in_groups_of(3, Event.new) do |group| %>
           <% group.each do |event| %>
           <div class="d-flex flex-row flex-wrap m-0 justify-content-center">
@@ -23,5 +23,5 @@
 </div>
 
   <div>
-  <%= link_to "All Events", events_path, class:"btn btn-default" %>
+  <%= link_to "View All Events", events_path, class:"a-primary" %>
   </div>
