@@ -39,10 +39,6 @@ United Way Orange - #ff9600
  left: 50%;
 }
 
-#UpComingEvents {
-  display: flex;
-}
-
 .round-img {
   position: relative;
   display: inline-block;
