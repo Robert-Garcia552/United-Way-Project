@@ -14,7 +14,9 @@
  *= require_self
  */
 
- @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Sanchez');
+
 
 
 /* COLORS
@@ -28,6 +30,13 @@ United Way Red - #fe23oa
 United Way Orange - #ff9600
 */
 
+/* FONTS
+font-family: 'Cutive Mono', monospace;
+font-family: 'Sanchez', serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+
 .body {
   font-family: 'Roboto', sans-serif;
 }
@@ -39,25 +48,14 @@ United Way Orange - #ff9600
  left: 50%;
 }
 
-<<<<<<< HEAD
-.card-body {
-  display: flex;
-  flex-direction: column;
-  position: relative;
+.a-primary {
+  color: red;
 }
 
-.card-button {
-  position: absolute;
-  bottom: 0;
-
+.serif-font {
+  font-family: 'Sanchez', serif;
 }
 
-#UpComingEvents {
-  display: flex;
-}
-
-=======
->>>>>>> 9128c1e0f7173380636436452bc2bdbfd054d5db
 .round-img {
   position: relative;
   display: inline-block;
@@ -178,6 +176,20 @@ figcaption {
   font-weight: bold;
   color: #b41428;
 }
+
+/* Ways to Give Page */
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card-button {
+  position: absolute;
+  bottom: 0;
+}
+
 
 @media screen and (min-width: 1600px) {
     .container {
