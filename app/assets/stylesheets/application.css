@@ -177,6 +177,20 @@ figcaption {
   color: #b41428;
 }
 
+/* Ways to Give Page */
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card-button {
+  position: absolute;
+  bottom: 0;
+}
+
+
 @media screen and (min-width: 1600px) {
     .container {
         max-width: (1600px - @grid-gutter-width);
