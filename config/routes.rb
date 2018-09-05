@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'password_resets/edit'
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
-  
+
   resource :sessions, only: [:new, :create, :destroy]
   resources :users, except: [:index, :destroy]
   resources :events do
@@ -15,6 +15,9 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get '/pages/:page' => 'pages#show'
+  # get '/pages/:page' => 'pages#show'
+  get '/pages/about' => 'pages#about_us'
+  get '/pages/partners' => 'pages#partners'
+  get '/pages/waystogive' => 'pages#ways_to_give'
 
 end
