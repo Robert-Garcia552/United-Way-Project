@@ -8,13 +8,15 @@ class SessionsController < ApplicationController
               .try(:authenticate, params[:password])
     @permission = params[:permission]
 
-    return render :new unless @user.present?
-
-    login(@user) #comes from ApplicationController
+    if @user.present?
+      login(@user) #comes from ApplicationController
+      redirect_to @user
       if @permission == "1"
         remember(@user)
       end #comes from ApplicationController
-    redirect_to @user
+    else
+      redirect_to new_sessions_path, danger: "Email / Password combination does not exist."
+    end  
   end
 
   def destroy
