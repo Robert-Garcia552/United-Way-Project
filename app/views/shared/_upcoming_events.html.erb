@@ -3,7 +3,7 @@
       <h2><%= title  %> Events</h2>
       <% events.in_groups_of(3, Event.new) do |group| %>
           <% group.each do |event| %>
-          <div class="m-0 justify-content-center" id="UpComingEvents">
+          <div class="d-flex flex-row flex-wrap m-0 justify-content-center">
               <div>
                 <div >
                   <% if event.image.attached? %>
