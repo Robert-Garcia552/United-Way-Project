@@ -189,6 +189,11 @@ figcaption {
   position: absolute;
   bottom: 0;
 }
+.subscribe {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
 
 
 @media screen and (min-width: 1600px) {
