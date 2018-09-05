@@ -39,7 +39,6 @@ United Way Orange - #ff9600
  left: 50%;
 }
 
-<<<<<<< HEAD
 .card-body {
   display: flex;
   flex-direction: column;
@@ -49,15 +48,17 @@ United Way Orange - #ff9600
 .card-button {
   position: absolute;
   bottom: 0;
+}
 
+.subscribe {
+  position: absolute;
+  bottom: 0;
 }
 
 #UpComingEvents {
   display: flex;
 }
 
-=======
->>>>>>> 9128c1e0f7173380636436452bc2bdbfd054d5db
 .round-img {
   position: relative;
   display: inline-block;
