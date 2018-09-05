@@ -33,16 +33,18 @@
             <a href="<%= root_path %>" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
-            <a href="../pages/about_us" class="nav-link">About Us</a>
+            <%= link_to "About us", pages_about_path, :class => 'nav-link' %>
           </li>
           <li class="nav-item">
             <a href="<%= events_path %>" class="nav-link">Upcoming Events</a>
           </li>
           <li class="nav-item">
-            <a href="../pages/ways_to_give" class="nav-link">Ways To Give</a>
+            <%= link_to "Ways to give", pages_waystogive_path, :class => 'nav-link' %>
           </li>
           <li class="nav-item">
-            <a href="../pages/partners" class="nav-link">Partners</a>
+            <%= link_to "Partners", pages_partners_path, :class => 'nav-link' %>
+            <!-- <%= link_to "Section", root_path, :class => "my-class", :id => "my-id" %>
+            <a href="../pages/partners" class="nav-link">Partners</a> -->
           </li>
           <li>
             <a class="btn btn-danger" href="https://portal.unitedwaymiami.org/comm/SinglePageRegPledge.jsp?DA=6663454&SC=general" target="_blank" role="button">GIVE</a>
