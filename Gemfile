@@ -3,9 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+
+gem "aws-sdk-s3", require: false
+gem 'aws-sdk-rails'
+
 gem 'merit'
 gem "mini_magick"
-gem "aws-sdk-s3", require: false
+
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
@@ -73,4 +77,3 @@ gem 'mini_racer', platforms: :ruby
 gem 'bootstrap', '~> 4.1.3'
 gem 'sidekiq'
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'aws-sdk', '~> 3'

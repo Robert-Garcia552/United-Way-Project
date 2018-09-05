@@ -14,6 +14,9 @@
  *= require_self
  */
 
+ @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
 /* COLORS
 Dark Blue - #000064
 Deep Red - #b41428
@@ -21,16 +24,23 @@ Light Beige - #f0e6c8
 Dark Beige - #e6d7aa
 Light Grey - #969696
 United Way Blue - #10167f
-United Way "Red" - #fe23oa
+United Way Red - #fe23oa
 United Way Orange - #ff9600
 */
 
+.body {
+  font-family: 'Roboto', sans-serif;
+}
 
  /* Carousel */
 .full-width-carousel {
  width: 100vw;
  margin-left: -50vw;
  left: 50%;
+}
+
+#UpComingEvents {
+  display: flex;
 }
 
 .round-img {
@@ -78,9 +88,12 @@ United Way Orange - #ff9600
   padding: 10px;
 }
 
+figcaption {
+  caption-side: bottom;
+}
+
 .round-img figcaption {
   position: absolute;
-  display: block;
   top: 5px;
   bottom: 5px;
   left: 5px;
@@ -92,11 +105,12 @@ United Way Orange - #ff9600
 
 .round-img:hover figcaption,
 .round-img.hover figcaption {
-  opacity: 1;
+  opacity: .9;
   text-transform: uppercase;
   color: white;
   -webkit-transform: translateX(0);
   transform: translateX(0);
+  vertical-align: text-bottom;
 }
 
 .round-img:hover:before,
@@ -132,13 +146,23 @@ United Way Orange - #ff9600
   text-align: center;
 }
 
-#youTubeAboutUs {
-  text-align: center;
-  background-color: black;
+#aboutUsRoundRow img {
+  filter: grayscale(100%);
 }
 
+.page-footer {
+  font-size: .75rem;
+}
 
+#aboutUsRoundRow a {
+  color: white
+}
 
+#aboutUsRoundRow a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: #b41428;
+}
 
 @media screen and (min-width: 1600px) {
     .container {

@@ -1,14 +1,27 @@
-<div class="container-events">
-    <h2><%= title  %> Events</h2>
-    <% events.in_groups_of(3, Event.new) do |group| %>
-        <div class="row m-0">
-            <% group.each do |event| %>
-                <div class="col-sm">
-                    <%= image_tag "home/community.jpg", class: ["d-block", "w-100"]%>
-                    <b><%= link_to event.title, event %></b>
+<div>
+    <div class="container-events ml-0 text-center">
+      <h2><%= title  %> Events</h2>
+      <% events.in_groups_of(3, Event.new) do |group| %>
+          <% group.each do |event| %>
+          <div class="m-0 justify-content-center" id="UpComingEvents">
+              <div>
+                <div >
+                  <% if event.image.attached? %>
+                      <%= image_tag rails_blob_url(event.image)  %>
+                  <% else %>
+                      <%= image_tag("home/UW-event.png", width: "400") %>
+                  <% end %>
                 </div>
-            <% end %>
+                <div>
+                  <b><%= link_to event.title, event %></b>
+                </div>
+              </div>
+          <% end %> <!-- end event do -->
         </div>
-    <% end %>
-    <%= link_to "All Events", events_path, class:"btn btn-default" %>
+      <% end %> <!-- end group do -->
+  </div>
 </div>
+
+  <div>
+  <%= link_to "All Events", events_path, class:"btn btn-default" %>
+  </div>
