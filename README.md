@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Creating a web-app for United Way Miami that allows users to interact with events, track time volunteered, and share their experiences with friends.
 
-Things you may want to cover:
+Notes from project:
 
-* Ruby version
+* Ruby 2.5.1
 
-* System dependencies
+* Calendar for events created with React.
 
-* Configuration
+* Utilizing AWS S3
 
-* Database creation
+* Redis 4.0
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Final Project for United Way of Miami Dade
