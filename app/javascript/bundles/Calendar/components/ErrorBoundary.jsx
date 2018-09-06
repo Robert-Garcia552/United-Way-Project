@@ -8,18 +8,14 @@ class ErrorBoundary extends Component   {
    
 
     componentDidCatch(error)  {
-        this.setState = {hasErrors: true}
+        this.setState({hasErrors: true});
     }
     render()    {
-     if(this.state.hasErrors){
-            alert("Please refresh the page, something went wrong.")
+     if(this.state.hasErrors)   {
+        return   alert("Please refresh the page, something went wrong.")
         }
-        return(
-            this.props.children
-            {alert("Please refresh the page, something went wrong.")}
-    )
-
-}
+        return this.props.children
+    }
 }
 
 export default ErrorBoundary;
