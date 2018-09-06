@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
     if @user
       login(@user) #comes from ApplicationController
-      redirect_to root_path
+      redirect_to user_path(@user[:id])
         if @permission == "1"
           remember(@user)
         end #comes from ApplicationController
