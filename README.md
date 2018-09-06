@@ -2,6 +2,8 @@
 
 Creating a web-app for United Way Miami that allows users to interact with events, track time volunteered, and share their experiences with friends.
 
+This project is currently ongoing.
+
 Notes from project:
 
 * Ruby 2.5.1
