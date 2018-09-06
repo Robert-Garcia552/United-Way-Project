@@ -92,9 +92,7 @@ class Calendar extends React.Component {
           cancelRsvp={this.cancelRsvp}
           currentUser={currentUser}
         />
-        </ErrorBoundary>
         { currentUser && currentUser.admin &&
-          <ErrorBoundary>
           <FormDialog
             open={formDialogOpen}
             event={event}
@@ -111,8 +109,8 @@ class Calendar extends React.Component {
             createEvent={this.createEvent}
             handleImageChange={this.handleImageChange}
           />
-          </ErrorBoundary>
         }
+         </ErrorBoundary>
       </div>
     );
   }
