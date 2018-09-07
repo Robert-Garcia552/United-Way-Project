@@ -1,37 +1,39 @@
-<div class="container">
-  <div>
-    <div>
-      <div class="jumbotron">
-        <div class="container">
-          <% if @user.image.attached? %>
-            <p>
-              <%= image_tag @user.image.variant(resize: "400"), class: "mx-auto d-block rounded" %>
-            </p>
-          <% end %>
-          <h1 class="display-4">Welcome, <%= @user.first_name %></h1>
-          <p class="lead text-center">Behind everything we do, there are people like you who make it happen.  When you give, advocate and volunteer you become a powerful agent of change– helping to improve the odds for children and families throughout our community.  And, there’s no shortage of ways to get involved.
-            <br><strong>Join us and LIVE UNITED.</strong></p>
-        </div>
-          <div class="text-center">
-            <% if current_user.id == @user.id %>
-              <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary btn-rounded btn-sm" %>
-            <% end %>
-          </div>
-      </div>
-      <div class="p-3 mb-2 text-white text-center" style="background-color: #000064">
-        <h2>Badges</h2>
-        <span class="text-justify"></span>
-        <div class="row">
-          <ul>
-            <% current_user.badges.each do |badge| %>
-              <%= image_tag badge.custom_fields[:image], :alt => badge.description, :float => "left", :height =>"100" %>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-      <% if @my_events.any? %>
-        <%= render 'shared/upcoming_events', events: @my_events, title: "Registered" %>
+<div>
+  <div class="jumbotron m-4">
+    <div class="container">
+      <% if @user.image.attached? %>
+        <p>
+          <%= image_tag @user.image.variant(resize: "400"), class: "mx-auto d-block rounded" %>
+        </p>
       <% end %>
-      <%= render 'shared/upcoming_events', events: @events, title: "Upcoming" %>
+      <h1 class="display-4">Welcome, <%= @user.first_name %></h1>
+      <p class="lead text-center">Behind everything we do, there are people like you who make it happen.  When you give, advocate and volunteer you become a powerful agent of change– helping to improve the odds for children and families throughout our community.  And, there’s no shortage of ways to get involved.
+        <br><strong>Join us and LIVE UNITED.</strong></p>
+    </div>
+      <div class="text-center">
+        <% if current_user.id == @user.id %>
+          <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary btn-rounded btn-sm" %>
+        <% end %>
+      </div>
+  </div>
+  <div class="p-3 mb-2 text-white text-center m-4" style="background-color: #000064">
+    <h2>Badges</h2>
+    <span class="text-justify"></span>
+    <div class="row">
+      <ul>
+        <% current_user.badges.each do |badge| %>
+          <%= image_tag badge.custom_fields[:image], :alt => badge.description, :float => "left", :height =>"100" %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <% if @my_events.any? %>
+    <%= render 'shared/upcoming_events', events: @my_events, title: "Registered" %>
+  <% end %>
+  <!-- Upcoming Events -->
+  <div id="ml-0">
+    <div class="full-width ml-0 p-4">
+    <%= render 'shared/upcoming_events', events: @events, title: "Upcoming", class: "d-flex justify-content-center" %>
+    </div>
   </div>
 </div>
