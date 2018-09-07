@@ -56,6 +56,20 @@ font-family: 'Roboto', sans-serif;
   font-family: 'Sanchez', serif;
 }
 
+.give-button {
+  position: relative;
+  float: right;
+}
+
+.container-events {
+  text-align: center;
+}
+
+footer {
+  margin-top: 10px;
+  text-align: center;
+}
+
 .round-img {
   position: relative;
   display: inline-block;
