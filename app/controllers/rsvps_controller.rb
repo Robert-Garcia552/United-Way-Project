@@ -4,7 +4,20 @@ class RsvpsController < ApplicationController
   def create
     @rsvp = current_user.rsvps.find_or_create_by(event: @event)
     render json: @rsvp
-  end
+
+ respond_to do |format|
+   if current_user.rsvps
+     # Tell the UserMailer to send a welcome email after save
+     ReminderEmailMailer.with(user: current_user).event_reminder_email.deliver_later
+
+     format.html { redirect_to(@user, notice: 'User was successfully created.') }
+     format.json { render json: @user, status: :created, location: @user }
+   else
+     format.html { render action: 'new' }
+     format.json { render json: @user.errors, status: :unprocessable_entity }
+   end
+ end
+end
 
   def destroy
     rsvp = current_user.rsvps.find_by(event: @event)
