@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2018_09_02_025618) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2018_09_02_025618) do
     t.datetime "end_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "date"
     t.string "location"
     t.string "street_address"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2018_09_02_025618) do
   end
 
   create_table "merit_score_points", force: :cascade do |t|
-    t.integer "score_id"
+    t.bigint "score_id"
     t.integer "num_points", default: 0
     t.string "log"
     t.datetime "created_at"
@@ -93,14 +93,14 @@ ActiveRecord::Schema.define(version: 2018_09_02_025618) do
   end
 
   create_table "merit_scores", force: :cascade do |t|
-    t.integer "sash_id"
+    t.bigint "sash_id"
     t.string "category", default: "default"
     t.index ["sash_id"], name: "index_merit_scores_on_sash_id"
   end
 
   create_table "rsvps", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "event_id"
+    t.bigint "user_id"
+    t.bigint "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_rsvps_on_event_id"
@@ -135,4 +135,6 @@ ActiveRecord::Schema.define(version: 2018_09_02_025618) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "rsvps", "events"
+  add_foreign_key "rsvps", "users"
 end
