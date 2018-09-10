@@ -58,7 +58,8 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    event = current_user.events.find(params[:id])
+    redirect_to root_path unless current_user&.admin
+    event = Event.find(params[:id])
     event.destroy
     render json: event
   end

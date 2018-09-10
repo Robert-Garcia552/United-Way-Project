@@ -69,7 +69,7 @@ const EventDialog = props => {
         <Button onClick={props.handleClose} color="primary">
           Cancel
         </Button>
-        { user && user.admin && user.id === event.user_id &&
+        { user && user.admin &&
           <Button onClick={ () => { props.destroyEvent(event) } } color="secondary">
             Delete
           </Button>
