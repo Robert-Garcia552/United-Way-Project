@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     attr_accessor :remember_token, :reset_token
-    before_save   :downcase_email
-    
+    before_save   :downcase_email, :capitalize_name
+
     has_merit
 
     validates :first_name, :last_name, :birthdate, :email, :phone_number, presence: true
@@ -70,7 +70,7 @@ class User < ApplicationRecord
     def password_reset_expired?
         reset_sent_at < 2.hours.ago
     end
-    
+
 
     private
 
@@ -87,4 +87,8 @@ class User < ApplicationRecord
         self.email = email.downcase
     end
 
+    def capitalize_name
+      self.first_name = first_name.capitalize
+      self.last_name = last_name.capitalize
+    end
 end
