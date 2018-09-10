@@ -43,6 +43,14 @@ class EventsController < ApplicationController
   def create
     event = current_user.events.new(event_params)
     if event.save
+      image = event.image.try(:variant, resize: '100x100')
+      event = event.attributes.merge(
+        "attending" => Rsvp.where(event: event, user: current_user).exists?,
+        "image" => {
+          "name" => image.try(:send, :filename),
+          "url" => url_for(image)          
+        }
+      )
       render json: event
     else
       render json: event.errors.full_messages, status: :unprocessable_entity
