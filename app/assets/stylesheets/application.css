@@ -119,9 +119,9 @@ footer {
   padding: 10px;
 }
 
-figcaption {
+/* figcaption {
   caption-side: bottom;
-}
+} */
 
 .round-img figcaption {
   position: absolute;
@@ -138,10 +138,10 @@ figcaption {
 .round-img.hover figcaption {
   opacity: .9;
   text-transform: uppercase;
+  text-align: center;
   color: white;
   -webkit-transform: translateX(0);
   transform: translateX(0);
-  vertical-align: text-bottom;
 }
 
 .round-img:hover:before,
