@@ -43,6 +43,14 @@ class EventsController < ApplicationController
   def create
     event = current_user.events.new(event_params)
     if event.save
+      image = event.image.try(:variant, resize: '100x100')
+      event = event.attributes.merge(
+        "attending" => Rsvp.where(event: event, user: current_user).exists?,
+        "image" => {
+          "name" => image.try(:send, :filename),
+          "url" => url_for(image)          
+        }
+      )
       render json: event
     else
       render json: event.errors.full_messages, status: :unprocessable_entity
@@ -50,7 +58,8 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    event = current_user.events.find(params[:id])
+    redirect_to root_path unless current_user&.admin
+    event = Event.find(params[:id])
     event.destroy
     render json: event
   end

@@ -78,6 +78,10 @@ class User < ApplicationRecord
         WelcomeMailer.with(user: self).welcome.deliver_later
     end
 
+    def send_upcoming_event_email
+        UserMailer.with(user: self).upcoming_event_email.deliver_later
+    end
+
     # Converts email to all lower-case.
     def downcase_email
         self.email = email.downcase
