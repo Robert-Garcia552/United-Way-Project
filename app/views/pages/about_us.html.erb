@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>About Us</title>
   </head>
-  <body>
+  <body class="p-0 m-4">
 
-  <div class="container-fluid p-0">
+  <div class="container-fluid">
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-4 serif-font">About Us</h1>
@@ -49,24 +49,26 @@
         <section id="aboutUsRoundRow" class="m-0" style="background: #b41428">
            <figure class="round-img">
             <%= image_tag "home/calendar.jpg" %>
-            <figcaption><%= link_to 'Register for an Event', events_path %></figcaption>
+            <figcaption class="d-flex align-items-center">
+              <%= link_to 'Register for Event', events_path %>
+            </figcaption>
           </figure>
           <figure class="round-img">
             <%= image_tag "home/give-back.png" %>
-            <figcaption>
-              <a href="https://unitedwaymiami.org/get-involved/give-to-your-united-way/start-a-campaign-at-your-workplace/campaigntoolkit/" target="_blank">Start A Campaign</a>
+            <figcaption class="d-flex align-items-center">
+              <%= link_to 'Start A Campaign', "https://unitedwaymiami.org/get-involved/give-to-your-united-way/start-a-campaign-at-your-workplace/campaigntoolkit/" %>
             </figcaption>
           </figure>
           <figure class="round-img">
             <%= image_tag "home/uw-history.jpg" %>
-            <figcaption>
-              <a href="https://unitedwaymiami.org/about-united-way-of-miami-dade/more-than-90-years-of-building-a-stronger-miami/" target="_blank">Our History</a>
+            <figcaption class="d-flex align-items-center">
+              <%= link_to 'Our History', "https://unitedwaymiami.org/about-united-way-of-miami-dade/more-than-90-years-of-building-a-stronger-miami/" %>
             </figcaption>
           </figure>
           <figure class="round-img">
             <%= image_tag "home/job-postings.jpg" %>
-            <figcaption>
-              <a href="https://unitedwaymiami.org/job-postings/" target="_blank">Join Our Team</a>
+            <figcaption class="d-flex align-items-center">
+              <%= link_to 'Join Our Team', "https://unitedwaymiami.org/job-postings/" %>
             </figcaption>
           </figure>
         </section>
