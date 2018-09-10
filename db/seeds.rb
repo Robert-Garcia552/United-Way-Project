@@ -309,7 +309,7 @@ DATA = {
                   Volunteer opportunities vary depending on the time of the year and what is currently taking place at the program. Opportunities can range from mentoring a student, tutoring, small groups on hygiene, relationships, college or career guidance.
 
                   Please note that if you volunteer once, you might not need to complete a background check, but if you sign up for multiple shifts, you will be asked to complete a background check.",
-                  date: "",
+                  date: "September 15, 2018",
                   start_at: "2018-09-15 09:00:00 EDT",
                   end_at: "2018-09-15 12:00:00 EDT",
                   location: "hello",
@@ -329,9 +329,9 @@ DATA = {
                   description: "Food for Life Network, Inc., a program through Care Resource, is committed to delivering services with compassion and confidentiality, to fostering clients’ dignity and independence, and to enhancing clients’ quality of life. Clients are never charged for services. Instead, Care Resource depend on grants and donations from socially responsible individuals, groups, businesses and organizations within and beyond the local community.​
 
                   Volunteers are needed in the food bank to pack groceries for pickup and meals for delivery, sort and shelve donations, in addition to other food bank tasks as needed.",
-                  date: "2018-09-27 09:00:00 EDT",
+                  date: "September 19, 2018",
                   start_at: "2018-09-19 09:00:00 EDT",
-                  end_at: "2018-09-18 12:00:00 EDT",
+                  end_at: "2018-09-19 12:00:00 EDT",
                   location: "Food for Life Network",
                   street_address: "3400 Northeast 2nd Avenue",
                   city: "Miami",
@@ -347,7 +347,7 @@ DATA = {
                 {
                   title: "Lotus Village Volunteer Opportunities",
                   description: "They have a new state-of-the-art facility and they are looking for volunteers that can come with activities or ideas. Lotus Village relies on volunteers to create and lead activities for the women, children, and together (including mommy & me)! If you have knowledge or passion about art, meditation, Zumba, knitting, make-up, manicures, (to name a few), Lotus Village is especially (but not only) looking for volunteers to commit 1+ hours a week.",
-                  date: "2018-09-27 09:00:00 EDT" ,
+                  date: "September 21, 2018",
                   start_at: "2018-09-21 09:00:00 EDT",
                   end_at: "2018-09-21 12:00:00 EDT",
                   location: "hello",
@@ -365,7 +365,7 @@ DATA = {
                 {
                   title: "Red Cross",
                   description: "The Red Cross is looking for volunteers to cover their reception desk and answer phones. If you have any questions, please call Sylvia J. Taylor at (954) 895-8935.",
-                  date: "2018-09-27 09:00:00 EDT",
+                  date: "September 24, 2018",
                   start_at: "2018-09-24 09:00:00 EDT",
                   end_at: "2018-09-24 12:00:00 EDT",
                   location: "hi",
@@ -383,7 +383,7 @@ DATA = {
                 {
                   title: "Southwest Social Services Badia Senior Center",
                   description: "Southwest Social Services Programs, Inc. has been serving senior citizens throughout Miami-Dade County since 1981. The services they offer include home-delivered meals, congregate meals in senior centers, screening and assessment, nutrition education, recreational activities, education, and transportation. Southwest Social services is looking for volunteers throughout the week to help with arts & crafts, English classes, recreational activities and computer classes for seniors.",
-                  date: "2018-09-27 09:00:00 EDT" ,
+                  date: "September 27, 2018" ,
                   start_at: "2018-09-27 09:00:00 EDT",
                   end_at: "2018-09-27 12:00:00 EDT",
                   location: "Badia Senior Center (Main)",
