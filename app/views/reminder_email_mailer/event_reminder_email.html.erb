@@ -312,7 +312,24 @@
                     <tr>
                       <td>
                         <p>Hi, <%= @user.first_name %>!</p>
-                        <p>Thank you .</p>
+                        <p>Thank you for registering for <%= @rsvp.title %>!</p>
+
+                        <p> <strong>EVENT DETAILS</strong></p>
+                        <ul>
+                          <strong>EVENT: </strong> <%= @rsvp.title %><br>
+
+                          <strong>DESCRIPTION: </strong><%= @rsvp.description %><br>
+
+                          <strong>DATE: </strong><%= @rsvp.date %><br>
+
+                          <strong>START TIME: </strong><%= @rsvp.start_at.strftime("%-I:%M %p") %><br>
+
+                          <strong>END TIME: </strong><%= @rsvp.end_at.strftime("%-I:%M %p") %><br>
+
+                          <strong>WHERE: </strong>
+                            <%= @rsvp.street_address %>,
+                            <%= @rsvp.city %>, <%= @rsvp.state %> <%= @rsvp.zip %><br>
+                        </ul>
                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                           <tbody>
                             <tr>
@@ -320,7 +337,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0">
                                   <tbody>
                                     <tr>
-                                      <td> <a href="#" target="_blank">CONFIRM EMAIL</a> </td>
+                                      <td> <a href="#" target="_blank">SEE MORE EVENTS</a> </td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -328,7 +345,10 @@
                             </tr>
                           </tbody>
                         </table>
-                        <p>Behind everything we do, there are people like you who make it happen.  When you give, advocate and volunteer, you become a powerful agent of change– helping to improve the odds for children and families throughout our community.  And, there’s no shortage of ways to get involved. Join us and LIVE UNITED.</p>
+
+
+                        <p>We come from different parts of the globe, different backgrounds and from all walks of life but we have one thing in common, we all chose to call Miami home. It’s where we work, play and raise our families and we come together as a community to make it better.</p>
+
                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-success">
                           <tbody>
                             <tr>
@@ -336,7 +356,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0">
                                   <tbody>
                                     <tr>
-                                      <td> <a href="https://portal.unitedwaymiami.org/comm/SinglePageRegPledge.jsp?DA=6663454&SC=general" target="_blank">GIVE </a> </td>
+                                      <td> <a href="https://portal.unitedwaymiami.org/comm/SinglePageRegPledge.jsp?DA=6663454&SC=general" target="_blank">MORE WAYS TO GIVE </a> </td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -386,4 +406,4 @@
       </tr>
     </table>
   </body>
-</html>
+</html> -->

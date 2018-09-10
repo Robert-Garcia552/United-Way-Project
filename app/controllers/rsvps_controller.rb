@@ -19,5 +19,4 @@ class RsvpsController < ApplicationController
   def set_event
     @event = Event.find(params[:event_id])
   end
-
 end

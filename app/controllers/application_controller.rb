@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
     return redirect_to root_path
   end
-  
+
   def remember(user)
     user.remember
     cookies.permanent.signed[:user_id] = user.id
