@@ -16,24 +16,23 @@
         <% end %>
       </div>
   </div>
-  <div class="p-3 mb-2 text-white text-center m-4" style="background-color: #000064">
-    <h2>Badges</h2>
-    <span class="text-justify"></span>
-    <div class="row">
-      <ul>
+  <div class="p-3 mb-2 text-white m-4" style="background-color: #000064">
+    <h2 class="serif-font text-center">Badges</h2>
+    <div class="row ml-0 justify-content-center">
+      <div>
         <% current_user.badges.each do |badge| %>
-          <%= image_tag badge.custom_fields[:image], :alt => badge.description, :float => "left", :height =>"100" %>
+          <%= image_tag badge.custom_fields[:image], :alt => badge.description, :height =>"100" %>
         <% end %>
-      </ul>
+      </div>
     </div>
   </div>
   <% if @my_events.any? %>
     <%= render 'shared/upcoming_events', events: @my_events, title: "Registered" %>
   <% end %>
   <!-- Upcoming Events -->
-  <div id="ml-0">
-    <div class="full-width ml-0 p-4">
-    <%= render 'shared/upcoming_events', events: @events, title: "Upcoming", class: "d-flex justify-content-center" %>
+  <div>
+    <div class="p-3 mb-2 text-white m-4" style="background-color: #000064">
+      <%= render 'shared/upcoming_events', events: @events, title: "Upcoming" %>
     </div>
   </div>
 </div>
