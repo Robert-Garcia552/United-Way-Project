@@ -1,61 +1,66 @@
-<div class= 'form-group p-4'>
+<div class= 'form-group p-4 container'>
   <h1>Sign up</h1>
   <%= form_for @user do |f| %>
-    <p class= "col-4">
-        <span>* required field:</span></br>
-        <%= f.label :suffix %></br>
-        <span><%= f.radio_button :suffix, "Mr." %> Mr. </span></br>
-        <span><%= f.radio_button :suffix, "Miss" %> Miss </span></br>
-        <span><%= f.radio_button :suffix, "Mrs." %> Mrs. </span></br>
-        <span><%= f.radio_button :suffix, "Dr." %> Dr. </span></br>
-    </p>
-    <p class= "col-4">
-        <%= f.label :image %>
-        <%= f.file_field :image %>
-    </p>
-    <p class= "col-4">
-        <%= f.label :first_name %><span> * </span>
+  <div class="text-center">
+        <%= f.label :suffix %>
+     <div class=" row col-md-6 offset-md-3 justify-content-center">
+        <span style="padding: 6px"><%= f.radio_button :suffix, "Mr." %> Mr. </span></br>
+        <span style="padding: 6px"><%= f.radio_button :suffix, "Miss" %> Miss </span></br>
+        <span style="padding: 6px"><%= f.radio_button :suffix, "Mrs." %> Mrs. </span></br>
+        <span style="padding: 6px"><%= f.radio_button :suffix, "Dr." %> Dr. </span></br>
+    
+    </div>
+    <div class="align-content-center">
+    <div class="col-md-6 offset-md-3">
+        <span style="color: red">* required field:</span></br>
+        <%= f.label :first_name %><span style="color: red"> * </span>
         <%= f.text_field :first_name, class: 'form-control' %>
-    </p>
-    <p class= "col-4">
+    </div>
+    <div class="col-md-6 offset-md-3">
         <%= f.label :middle_name %>
         <%= f.text_field :middle_name, class: 'form-control' %>
-    </p>
-    <p class= "col-4">
-        <%= f.label :last_name %><span> * </span>
+    </div>
+    <div class="col-md-6 offset-md-3">
+        <%= f.label :last_name %><span style="color: red" * </span>
         <%= f.text_field :last_name, class: 'form-control' %>
-    </p>
-    <p class= "col-4"> 
-        <%= f.label :birthdate %><span> * </span>
+    </div>
+    </div>
+    <div class="col-md-6 offset-md-3"> 
+        <%= f.label :birthdate %><span style="color: red"> * </span>
         <%= f.date_field :birthdate, class: 'form-control' %>
-    </p>
-    <p class= "col-4">
-        <%= f.label :email %><span> * </span>
+    </div>
+    <div class= "col-md-6 offset-md-3">
+        <%= f.label :email %><span style="color: red"> * </span>
         <%= f.text_field :email, class: 'form-control' %>
-    </p>
-    <p class= "col-4">
+    </div>
+    <div class="col-md-6 offset-md-3">
         <%= f.label :employer %>
         <%= f.text_field :employer, class: 'form-control' %>
-    </p>
-    <p class= "col-4">
-        <%= f.label :phone_number %><span> * </span>
+    </div>
+    <div class="col-md-6 offset-md-3">
+        <%= f.label :phone_number %><span style="color: red"> * </span>
         <%= f.number_field :phone_number, class: 'form-control' %>
-    </p>
-     <p class= "col-4">
+    </div>
+     <div class="col-md-6 offset-md-3">
         <%= f.label :gender %></br>
         <%= f.select :gender, options_for_select(["Male", "Female"]) %> </br>
-    </p>
-    <p class= "col-4">
-        <%= f.label :password %><span> * </span>
+    </div>
+    <br>
+    <div class="col-md-6 offset-md-3">
+        <%= f.label :password %><span style="color: red"> * </span>
         <%= f.password_field :password, class: 'form-control' %>
-    </p>
-    <p class= "col-4">
-        <%= f.label :password_confirmation %><span> * </span>
+    </div>
+    <div class="col-md-6 offset-md-3">
+        <%= f.label :password_confirmation %><span style="color: red"> * </span>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
-    </p>
-    <p class= "col-4">
+    </div>
+        <div class="col-md-6 offset-md-3">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+    </div>
+    <div class="col-md-6 offset-md-3 mt-3">
         <%= f.submit :Submit, class: 'btn btn-primary' %>
-    </p>
-
+    </div>
+    </div>
   <% end %>
 </div>
