@@ -17,7 +17,7 @@ class User < ApplicationRecord
     has_one :user_profile
     has_one_attached :image
     has_many :events, dependent: :nullify
-    has_many :rsvps
+    has_many :rsvps, dependent: :destroy
     has_many :attending_events, through: :rsvps, source: :event
 
     def next_three_events
