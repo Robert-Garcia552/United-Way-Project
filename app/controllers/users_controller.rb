@@ -17,12 +17,12 @@ class UsersController < ApplicationController
     end
 
     def show
-      @events = Event.future.first(3)
-      @my_events = current_user.attending_events
+      @events = Event.ordered.future.first(3)
+      @my_events = current_user.attending_events.ordered
     end
 
     def edit
-      
+
     end
 
     def update

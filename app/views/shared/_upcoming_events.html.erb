@@ -7,9 +7,10 @@
               <div>
                 <div >
                   <% if event.image.attached? %>
-                      <%= image_tag rails_blob_url(event.image)  %>
+                      <%= image_tag rails_blob_url(event.image), height:
+                    "200"  %>
                   <% else %>
-                      <%= image_tag("home/UW-event.png", width: "400") %>
+                      <%= image_tag("home/UW-event.png", height: "200") %>
                   <% end %>
                 </div>
                 <div>
