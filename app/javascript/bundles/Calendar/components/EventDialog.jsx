@@ -51,19 +51,19 @@ const EventDialog = props => {
         </DialogContentText>
       </DialogContent>
         <DialogActions>
-        <FacebookShareButton url={`https://united-way-connect.herokuapp.com/${event.id}`}>
+        <FacebookShareButton url={`https://united-way-connect.herokuapp.com/events/${event.id}`}>
           <FacebookIcon size={32} round={true} />
         </FacebookShareButton>
-        <TwitterShareButton url={`https://united-way-connect.herokuapp.com/${event.id}`}>
+        <TwitterShareButton url={`https://united-way-connect.herokuapp.com/events/${event.id}`}>
           <TwitterIcon size={32} round={true} />
         </TwitterShareButton>
-        <LinkedinShareButton url={`https://united-way-connect.herokuapp.com/${event.id}`}>
+        <LinkedinShareButton url={`https://united-way-connect.herokuapp.com/events/${event.id}`}>
           <LinkedinIcon size={32} round={true} />
         </LinkedinShareButton>
-        <GooglePlusShareButton url={`https://united-way-connect.herokuapp.com/${event.id}`}>
+        <GooglePlusShareButton url={`https://united-way-connect.herokuapp.com/events/${event.id}`}>
           <GooglePlusIcon size={32} round={true} />
         </GooglePlusShareButton>
-        <EmailShareButton url={`https://united-way-connect.herokuapp.com/${event.id}`}>
+        <EmailShareButton url={`https://united-way-connect.herokuapp.com/events/${event.id}`}>
           <EmailIcon size={32} round={true} />
         </EmailShareButton>
         <Button onClick={props.handleClose} color="primary">
