@@ -1,7 +1,7 @@
 <div class= 'form-group p-4'>
   <h1>Sign up</h1>
   <%= form_for @user do |f| %>
-    <p>
+    <p class= "col-4">
         <span>* required field:</span></br>
         <%= f.label :suffix %></br>
         <span><%= f.radio_button :suffix, "Mr." %> Mr. </span></br>
@@ -9,51 +9,51 @@
         <span><%= f.radio_button :suffix, "Mrs." %> Mrs. </span></br>
         <span><%= f.radio_button :suffix, "Dr." %> Dr. </span></br>
     </p>
-    <p>
+    <p class= "col-4">
         <%= f.label :image %>
         <%= f.file_field :image %>
     </p>
-    <p>
+    <p class= "col-4">
         <%= f.label :first_name %><span> * </span>
         <%= f.text_field :first_name, class: 'form-control' %>
     </p>
-    <p>
+    <p class= "col-4">
         <%= f.label :middle_name %>
         <%= f.text_field :middle_name, class: 'form-control' %>
     </p>
-    <p>
+    <p class= "col-4">
         <%= f.label :last_name %><span> * </span>
         <%= f.text_field :last_name, class: 'form-control' %>
     </p>
-    <p>
+    <p class= "col-4"> 
         <%= f.label :birthdate %><span> * </span>
         <%= f.date_field :birthdate, class: 'form-control' %>
     </p>
-    <p>
+    <p class= "col-4">
         <%= f.label :email %><span> * </span>
         <%= f.text_field :email, class: 'form-control' %>
     </p>
-    <p>
+    <p class= "col-4">
         <%= f.label :employer %>
         <%= f.text_field :employer, class: 'form-control' %>
     </p>
-    <p>
+    <p class= "col-4">
         <%= f.label :phone_number %><span> * </span>
         <%= f.number_field :phone_number, class: 'form-control' %>
     </p>
-     <p>
+     <p class= "col-4">
         <%= f.label :gender %></br>
         <%= f.select :gender, options_for_select(["Male", "Female"]) %> </br>
     </p>
-    <p>
+    <p class= "col-4">
         <%= f.label :password %><span> * </span>
         <%= f.password_field :password, class: 'form-control' %>
     </p>
-    <p>
+    <p class= "col-4">
         <%= f.label :password_confirmation %><span> * </span>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
     </p>
-    <p>
+    <p class= "col-4">
         <%= f.submit :Submit, class: 'btn btn-primary' %>
     </p>
 
