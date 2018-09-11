@@ -1,28 +1,27 @@
 <div>
-    <div class="container-events ml-0 text-center">
-      <h2 class="serif-font"><%= title  %> Events</h2>
-      <% events.in_groups_of(3, Event.new) do |group| %>
-          <% group.each do |event| %>
-          <div class="d-flex flex-row flex-wrap m-0 justify-content-center">
-              <div>
-                <div >
-                  <% if event.image.attached? %>
-                      <%= image_tag rails_blob_url(event.image), height:
-                    "200"  %>
-                  <% else %>
-                      <%= image_tag("home/UW-event.png", height: "200") %>
-                  <% end %>
-                </div>
-                <div>
-                  <b><%= link_to event.title, event %></b>
-                </div>
-              </div>
-          <% end %> <!-- end event do -->
-        </div>
-      <% end %> <!-- end group do -->
+  <div class="container-events ml-0 text-center">
+    <h2 class="serif-font"><%= title  %> Events</h2>
+    <% events.in_groups_of(3, false) do |group| %>
+      <div class="d-flex flex-row flex-wrap m-0 justify-content-center">
+        <% group.each do |event| %>
+          <div style='margin-left: 5px; margin-right: 5px;'>
+            <div>
+              <% if event.image.attached? %>
+                <%= image_tag rails_blob_url(event.image), height: "200"  %>
+              <% else %>
+                <%= image_tag("home/UW-event.png", height: "200") %>
+              <% end %>
+            </div>
+            <div>
+              <b><%= link_to truncate(event.title, length: 35), event %></b>
+            </div>
+          </div>
+        <% end %> <!-- end event do -->
+      </div>
+    <% end %> <!-- end group do -->
   </div>
 </div>
 
-  <div>
-  <%= link_to "View All Events", events_path, class:"a-primary" %>
-  </div>
+<div class="text-center">
+  <%= link_to "View All Events", events_path, class: "a-primary" %>
+</div>
