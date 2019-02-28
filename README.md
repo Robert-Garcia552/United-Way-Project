@@ -6,9 +6,9 @@ Creating a web-app for United Way Miami that allows users to interact with event
 
 ### Authors
 
-Robert Garcia
-Kristina Rivero
-Thomas McFadden
+* Robert Garcia
+* Kristina Rivero
+* Thomas McFadden
 
 ### Notes
 
