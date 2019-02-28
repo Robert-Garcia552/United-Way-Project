@@ -1,10 +1,16 @@
 # README
 
+### Purpose
+
 Creating a web-app for United Way Miami that allows users to interact with events, track time volunteered, and share their experiences with friends.
 
-This project is currently ongoing.
+### Authors
 
-Notes from project:
+Robert Garcia
+Kristina Rivero
+Thomas McFadden
+
+### Notes
 
 * Ruby 2.5.1
 
@@ -14,4 +20,8 @@ Notes from project:
 
 * Redis 4.0
 
-* Final Project for United Way of Miami Dade
+* Final Volunteer Project for United Way of Miami-Dade
+
+### Future Implementations
+
+Integrate with United Way of Miami-Dade volunteer database in order to deploy to production.
